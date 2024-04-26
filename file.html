@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile Page</title>
+  <style>
+    body {
+      font-family: cursive;
+      margin: 0;
+      padding: 0;
+      background-color: #F3D0D7;
+    }
+    .profile-card {
+      width: 300px;
+      background-color: #FFFAB7;
+      border-radius: 5px;
+      margin: 50px auto;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
+    .profile-image {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .profile-content {
+      padding: 15px;
+    }
+    .profile-name {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .profile-info {
+      margin-bottom: 10px;
+    }
+    .profile-info span {
+      font-weight: bold;
+    }
+    .profile-buttons {
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #FF0000;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    body{
+      height: 80vh;
+      width: 90vw;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <div class="profile-image">
+      <img src="data:image/jpeg;base64,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" alt="Profile Image">
+    </div>
+    <div class="profile-content">
+      <div class="profile-name">Olivia Gomez</div>
+      <div class="profile-info">
+        <span>Developer & Designer</span>
+      </div>
+      <div class="profile-info">
+        <span>Followers</span> 
+        <span>120</span>
+      </div>
+      <div class="profile-info">
+        <span>Following</span>
+        <span>5000</span>
+      </div>
+      <div class="profile-info">
+        <span>Posts</span>
+        <span>209</span>
+      </div>
+      <div  class="profile-buttons">
+        <a href="#" class="btn">subscribe</a>
+        <a href="#" class="btn">Follow Me</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+  
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-image: url("bg2.jpg");
+  background-color:#2192FF;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-text {
+  text-align: center;
+  color:rgb(226, 49, 49);
+}
+</style>
+</head>
+<body>
+<div class="bg-text">
+  <h1>Welcome to My Website</h1>
+  <p>This is a beautiful background created using HTML and CSS.</p>
+</div>
+</body>
+</html>
