@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 100vw;
+            height: 100vh;
+            background-color:black;
+        }
+        @media (min-width:50px) and (max-width:99px) {
+            .main{
+                background-color:orangered;
+            }
+            
+        }
+        @media (min-width:100px) and (max-width:299px) {
+            .main{
+                background-color: red;
+            }
+            
+        }
+        @media (min-width:300px) and (max-width:499px) {
+            .main{
+                background-color:palevioletred;
+            }
+            
+        }
+        @media (min-width:500px) and (max-width:699px) {
+            .main{
+                background-color:chartreuse;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main"></div>
+</body>
+</html>
