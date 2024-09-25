@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main{
+        height: 80vh;
+        width: 100vw;
+       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .zero{
+       background-color: crimson;
+       height: 50vh;
+       width: 40vw;
+       display: flex;
+        justify-content: center;
+        align-items: center;
+        /* by guide */
+        max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px red;
+       
+    }
+    p{
+        font-size: 35px;
+    }
+</style>
+<body>
+    <div class="main">
+        <div class="zero">
+            <form >
+            <p>calculate</p>
+            <input class="one" id="one"></input>
+            <br><br>
+            <input class="two" id="two"></input>
+                <br><br>
+            <button type="submit" onclick="xyz"(1)> <pre> 1 </pre> </button>
+            <button type="submit" onclick="xyz"(2)><pre> 2 </pre> </button>
+            <button type="submit" onclick="xyz"(3)><pre> 3 </pre> </button>
+            
+        </div>
+    </form>
+    </div>
+</body>
+</html>
+<!-- js. -->
+ <script>
+    function xyz(mouse){ 
+        let x = document.getElementById("xyz").value;
+        let y = document.getElementById("xyz").value;
+                 // process
+                 z = Number(x) + Number(y);
+            // output
+            document.getElementById("hello").innerHTML = z;
+        }
+
+ </script>
