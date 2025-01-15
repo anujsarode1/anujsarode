@@ -1,0 +1,37 @@
+.btn{
+    display: flex;
+    flex-direction: column;
+}
+button{
+    margin: 5px;
+    padding: 10px;
+    font-size: 20px;
+}
+/* Button Styles */
+button {
+    background-color: #4CAF50; /* Green background */
+    color: white;              /* White text */
+    padding: 15px 32px;        /* Padding inside the button */
+    border: none;              /* No border */
+    border-radius: 5px;        /* Rounded corners */
+    font-size: 16px;           /* Font size */
+    cursor: pointer;          /* Cursor on hover */
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Smooth transition */
+  }
+  
+  /* Hover state */
+  button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  /* Active (pressed) state */
+  button:active {
+    transform: scale(0.98);     /* Slightly shrink button when clicked */
+    background-color: #397d3a; /* Even darker green when pressed */
+  }
+  
+  /* Focus state (for accessibility) */
+  button:focus {
+    outline: 2px solid #000000; /* Light green outline for focus */
+  }
+  
