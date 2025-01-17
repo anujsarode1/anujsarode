@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10 Actors</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .actor-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .actor-item {
+      background-color: #f4f4f4;
+      margin: 10px;
+      /* padding: 15px 25px; */
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      width: 20%; /* Updated to be percentage-based */
+      min-width: 200px; /* Ensures the actor items don't shrink too much */
+      /* height: 300px; */
+      text-align: center;
+    }
+
+    .actor-item:hover {
+      background-color: #ddd;
+      transform: scale(1.05);
+    }
+
+    .actor-image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .movie-list {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .movie-list h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .movie-list ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .movie-list li {
+      font-size: 18px;
+      padding: 5px 0;
+    }
+
+    @media (max-width: 768px) {
+      .actor-item {
+        width: 15%; /* Adjusted for smaller screens */
+        min-width: 60px; /* Minimum size for small screens */
+      }
+
+      .actor-list {
+        gap: 10px; /* Reduced gap for smaller screens */
+      }
+
+      .movie-list h2 {
+        font-size: 20px; /* Smaller font size for mobile */
+      }
+
+      .movie-list li {
+        font-size: 16px; /* Adjust font size for mobile */
+      }
+    }
+
+    @media (max-width: 380px) {
+      .actor-item {
+        width: 25%; /* Almost full width for mobile */
+      }
+
+      .movie-list h2 {
+        font-size: 18px; /* Even smaller font size for very small screens */
+      }
+
+      .movie-list li {
+        font-size: 140px; /* Smaller font size for mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Movies List -->
+    <div class="movie-list">
+      <h2 id="actor-name"></h2>
+      <ul id="movies">
+        <!-- Movies will be listed here -->
+      </ul>
+    </div>
+    <h1>10 Actors</h1>
+
+    <!-- Actor List -->
+    <div class="actor-list">
+      <div class="actor-item" onclick="showMovies(0)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Leonardo_Dicaprio_Cannes_2019.jpg/220px-Leonardo_Dicaprio_Cannes_2019.jpg" alt="Leonardo DiCaprio" class="actor-image">
+        <h3>Leonardo DiCaprio</h3>
+      </div>
+      <div class="actor-item" onclick="showMovies(1)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Tom_Cruise_by_Gage_Skidmore_2.jpg/220px-Tom_Cruise_by_Gage_Skidmore_2.jpg" alt="Tom Cruise" class="actor-image">
+        <h3>Tom Cruise</h3>
+      </div>
+      <div class="actor-item" onclick="showMovies(2)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Shah_Rukh_Khan_graces_the_launch_of_the_new_Santro.jpg/220px-Shah_Rukh_Khan_graces_the_launch_of_the_new_Santro.jpg" alt="Sharukh Khan" class="actor-image">
+        <h3>Sharukh Khan</h3>
+      </div>
+      <div class="actor-item" onclick="showMovies(3)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Robert_Downey_Jr._2014_Comic-Con.jpg/220px-Robert_Downey_Jr._2014_Comic-Con.jpg" alt="Robert Downey Jr." class="actor-image">
+        <h3>Robert Downey Jr.</h3>
+      </div>
+      <div class="actor-item" onclick="showMovies(4)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Morgan_Freeman_at_The_Pentagon_on_2_August_2023_-_230802-D-PM193-3363_%28cropped%29.jpg/220px-Morgan_Freeman_at_The_Pentagon_on_2_August_2023_-_230802-D-PM193-3363_%28cropped%29.jpg" alt="Morgan Freeman" class="actor-image">
+        <h3>Morgan Freeman</h3>
+      </div>
+      <div class="actor-item" onclick="showMovies(5)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/TechCrunch_Disrupt_San_Francisco_2019_-_Day_1_%2848834070763%29_%28cropped%29.jpg/220px-TechCrunch_Disrupt_San_Francisco_2019_-_Day_1_%2848834070763%29_%28cropped%29.jpg" alt="Will Smith" class="actor-image">
+        <h3>Will Smith</h3>
+      </div>
+      <div class="actor-item" onclick="showMovies(6)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Dwayne_%22The_Rock%22_Johnson_Visits_the_Pentagon_%2841%29_%28cropped%29.jpg/220px-Dwayne_%22The_Rock%22_Johnson_Visits_the_Pentagon_%2841%29.jpg" alt="Dwayne Johnson" class="actor-image">
+        <h3>Dwayne Johnson</h3>
+      </div>
+      <div class="actor-item" onclick="showMovies(7)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Brad_Pitt-69858.jpg/220px-Brad_Pitt-69858.jpg" alt="Brad Pitt" class="actor-image">
+        <h3>Brad Pitt</h3>
+      </div>
+      <div class="actor-item" onclick="showMovies(8)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Johnny_Depp_2020.jpg/220px-Johnny_Depp_2020.jpg" alt="Johnny Depp" class="actor-image">
+        <h3>Johnny Depp</h3>
+      </div>
+      <div class="actor-item" onclick="showMovies(9)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Al_Pacino_2016_%2830401544240%29.jpg/220px-Al_Pacino_2016_%2830401544240%29.jpg" alt="Al Pacino" class="actor-image">
+        <h3>Al Pacino</h3>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const actors = [
+      { name: 'Leonardo DiCaprio', movies: ['Inception', 'Titanic', 'The Revenant'] },
+      { name: 'Tom Cruise', movies: ['Top Gun', 'Mission: Impossible', 'The Mummy'] },
+      { name: 'Sharukh Khan', movies: ['Raees', 'DDLJ', 'Pathan'] },
+      { name: 'Robert Downey Jr.', movies: ['Iron Man', 'Sherlock Holmes', 'Avengers'] },
+      { name: 'Morgan Freeman', movies: ['The Shawshank Redemption', 'Se7en', 'Bruce Almighty'] },
+      { name: 'Will Smith', movies: ['The Pursuit of Happyness', 'I Am Legend', 'Men In Black'] },
+      { name: 'Dwayne Johnson', movies: ['Jumanji', 'Fast & Furious', 'The Scorpion King'] },
+      { name: 'Brad Pitt', movies: ['Fight Club', 'Once Upon a Time in Hollywood', 'World War Z'] },
+      { name: 'Johnny Depp', movies: ['Pirates of the Caribbean', 'Edward Scissorhands', 'Dark Shadows'] },
+      { name: 'Al Pacino', movies: ['The Godfather', 'Heat', 'Scarface'] }
+    ];
+
+    // Function to display movies of the selected actor
+    function showMovies(index) {
+      const actor = actors[index];
+      const actorName = document.getElementById('actor-name');
+      const moviesList = document.getElementById('movies');
+
+      actorName.textContent = `${actor.name}'s Movies:`;
+      moviesList.innerHTML = actor.movies.map(movie => `<li>${movie}</li>`).join('');
+    }
+  </script>
+
+</body>
+</html>
