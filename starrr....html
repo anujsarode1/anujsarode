@@ -12,6 +12,7 @@
   <style>
    body {
             font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
         }
 
         #px-4 {
@@ -42,14 +43,14 @@
 
   </style>
  </head>
- <body class="bg-gray-50 text-gray-800">
+ <body id="Home" class="bg-gray-50 text-gray-800">
   <header class="flex flex-col sm:flex-row justify-between items-center p-6 border-b border-gray-200 fixed top-0 left-0 right-0 bg-white z-10">
    <!-- <div class="flex items-center mb-4 sm:mb-0">
     <span class="font-bold text-gray-600">
      Portfolio
     </span>
    </div> -->
-   <nav class="space-x-6"><a class="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-4 hover:decoration-pink-500" href="#">About</a><a class="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-4 hover:decoration-pink-500" href="#">Speaking</a><a class="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-4 hover:decoration-pink-500" href="#">Writing</a><a class="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-4 hover:decoration-pink-500" href="#">Uses</a><a class="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-4 hover:decoration-pink-500" href="#">Contact</a></nav>
+   <nav class="space-x-6"><a class="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-4 hover:decoration-pink-500" href="#Home">Home</a><a class="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-4 hover:decoration-pink-500" href="#About">About</a><a class="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-4 hover:decoration-pink-500" href="#Projects">Projects</a><a class="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-4 hover:decoration-pink-500" href="#Services">Services</a><a class="text-gray-600 hover:text-gray-800 hover:underline hover:underline-offset-4 hover:decoration-pink-500" href="#Contact">Contact</a></nav>
    <div class="space-x-4 text-lg">
     <a class="font-bold" href="#">
      <i class="fab fa-x-twitter">
@@ -76,33 +77,44 @@
     </span>
    </div>
   </header>
-  <main class="flex flex-col items-center mt-24 px-4 sm:px-6 md:px-8 lg:px-16">
-   <img alt="Illustration of Anuj Sarode" class="rounded-full border-4 border-pink-300" height="200" src="https://storage.googleapis.com/a1aa/image/wAGDAmhyYHKpPZViw9fMATt0XAXCMfALfbDuc3sAeBKNBlbQB.jpg" width="200"/>
+  <main id="About" class="flex flex-col items-center mt-24 px-4 sm:px-6 md:px-8 lg:px-16">
    <div class="text-center mt-6">
     <h1 class="text-4xl font-bold mb-4">
      Hello, I'm Anuj Sarode
     </h1>
+    <h2>
+      <pre>
+        <hr>
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡏⠀⠀⠀⣴⣿⠿⣿⡆⠀⣴⡿⠿⣷⡆⠀⣿⡿⠿⣷⣆⠀⣿⡿⠿⠿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+      ⠀⠀⠀⠀⢀⣀⡄⠀⠀⠀⣸⡟⠀⠀⠀⠀⣿⡇⠀⠸⠿⠀⣿⡇⠀⣿⣿⠀⣿⡇⠀⢸⣿⠀⣿⡇⠀⠀⠀⢠⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+      ⠀⠀⣶⣞⡛⠉⠁⠀⠀⢠⡿⠁⠀⠀⠀⠀⣿⡇⠀⠀⠀⠀⣿⡇⠀⣿⣿⠀⣿⡇⠀⢸⣿⠀⣿⣷⣶⣶⠀⠀⠉⠙⣛⣶⡆⠀⠀⠀⠀⠀⠀
+      ⠀⠀⠀⠉⠙⠻⠆⠀⢀⣿⠃⠀⠀⠀⠀⠀⣿⡇⠀⢰⣶⠀⣿⡇⠀⣿⣿⠀⣿⡇⠀⢸⣿⠀⣿⡇⠀⠀⠀⠰⠞⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀
+      ⠀⠀⠀⠀⠀⠀⠀⢀⣾⠏⠀⠀⠀⠀⠀⠀⢿⣧⣄⣾⡏⠀⢿⣧⣠⣿⠟⠀⣿⣧⣤⣾⡿⠀⣿⣧⣤⣤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+      </pre>
+    </h2>
     <p class="text-lg mb-6">
-     I'm a Creative Developer from Maharashtra, and I'm very
-     <br/>
-     passionate and dedicated to my work.
+      I'm A Full Stack Developer With Expertise In Building In HTML, CSS, JavaScript, And Backend Technologies.<br> Passionate About Building Interactiveand Efficient Web Applications, I Thrive On Solving Complex Problems And Continually Learning New Technologies To Enhance User Experiences. My Focus Is On Delivering High-Quality, Scalable, And Maintainable Code!
     </p></div>
-   <section id="change" class="mt-16 px-4 sm:px-0 md:px-8 lg:px-16 w-full max-w-6xl">
+   <section id="Projects" class="mt-16 px-4 sm:px-0 md:px-8 lg:px-16 w-full max-w-6xl">
     <h2 class="text-4xl font-bold mb-4 text-center">
      Projects
     </h2>
     <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-6">
      <div class="bg-white p-6 rounded-lg shadow-lg">
-      <img alt="Project 1 screenshot" class="rounded-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/Pd2CKlFqSA5WP9WMdrl4Tg4T7tzn4qRXd9fc9TyLxI8KocDKA.jpg" width="300"/>
+      <a href="https://anujsarode1.github.io/anujsarode/signin.html">
+      <img alt="Project 1 screenshot" class="rounded-lg mb-4" height="200" src="https://thumbs.dreamstime.com/b/sign-up-icon-flat-style-finger-cursor-vector-illustration-white-isolated-background-click-button-business-concept-143479797.jpg" width="300"/>
+      </a>
       <h3 class="text-2xl font-bold mb-2">
-       Project One
+       Sign Up
       </h3>
       <p class="text-gray-600">
        A brief description of Project One. This project involves creating a responsive web application using modern web technologies.
       </p>
      </div>
      <div class="bg-white p-6 rounded-lg shadow-lg">
-      <img alt="Project 2 screenshot" class="rounded-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/T12eqkm6BZW2EijM1Q5KdJNfecANvRwuiINuZNIU4E4ygyNoA.jpg" width="300"/>
+      <a href="https://anujsarode1.github.io/anujsarode/chess-one.html">
+      <img alt="Project 2 screenshot" class="rounded-lg mb-4" height="200" src="https://media.istockphoto.com/id/1165280768/vector/strategy-line-icon.jpg?s=612x612&w=0&k=20&c=ljhlpr7WJfc7zaAeId9QPGxWtcAN52CVx6EC8XmNGq8=" width="300"/>
+      </a>
       <h3 class="text-2xl font-bold mb-2">
        Project Two
       </h3>
@@ -111,7 +123,9 @@
       </p>
      </div>
      <div class="bg-white p-6 rounded-lg shadow-lg">
-      <img alt="Project 3 screenshot" class="rounded-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/FmWSwIipFOYDBVp1qsxUmLRVZGh1AideexzTlrBY1IkRQ5GUA.jpg" width="300"/>
+      <a href="https://anujsarode1.github.io/anujsarode/restaurent-menu.html">
+      <img alt="Project 3 screenshot" class="rounded-lg mb-4" height="200" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIQDxAQDxIQDw4ODw8PEA8QEBIQDRAPFREXFxcVFRMYICkgJBolGxMVIjEhJik3Li46Fx80OjMtNzQtLisBCgoKDg0OFRAQGi0gHyUvLi0rKy0wNy0rLS0yMS0uLy4tLi0tLS0tLS0tKzArNy8tLSstLS0tLS0tLS0tLSstLf/AABEIAOEA4QMBEQACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAAAQcCAwYFBAj/xABIEAACAQIBBQkMCAQGAwAAAAAAAQIDEQQFBxIhMQYTQVFSVGFxkRYXIjJygZKTocHR0hQ0YnSUsbKzQnOC4SQlU6LC8CMzQ//EABsBAQACAwEBAAAAAAAAAAAAAAABBAIFBgMH/8QANhEBAAECAgUJCAMAAwEAAAAAAAECAwQRBRUhMVESFEFScZGhseEGEyIyM1PB0UJhgTTw8WP/2gAMAwEAAhEDEQA/ALrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAxdWPC12oCN+jyo9qAb9HlR7UA36PKj2oBv0eVHtQDfo8qPagG/R5Ue1AN+jyo9qAb9HlR7UBKqx5Ue1AZJgSAAAAAAAAAAAAAAAAARJ21vUkBjGMpa/Ej/va9wGW8wW1X8rwvzAyVlsSXmROQm66BkF10DIyLroGQXXQMguugZBddAyMi66BkF10DIG1xLsGQw3mHJS6tT7UMhDpyXivSXE9vmfxICErq6/umBkAAAAAAAAAAAAAABhFaUvsw9sv7AY5QxsKFOdWrJQp04uUpPgSPW1aquVRRTGczuZU0zVMRCosvZxMVWm1hpfRqKb0bKLrSXHKTvbqWzjZ12F0JYt053finwbW3g6KY+LbLxu6vHc7r+mXdW4T7cPX3Frqwjurx3O6/pjVuE+3B7i11YR3V47ndf0xq3CfbhHuLXVg7q8fzuv6Y1bhPtwe4tdWEd1eP53X9Matwn24R7i11YO6vH87xHpjVuE+3B7i11Tusx/O6/pjVuE+3CPcW+qjusx/O8R6Y1bhPtwe4t9U7rMfzvEemNW4T7cI9xb6qO6zH87xHpjVuE+3B7m31Xo5IzgY6hNOpU+k09WlTqpXt9maV0+u66CviNDYa5HwxyZ4x+nnXhqKt2xcGQMtU8ZQhXot6M7pxfjwmtsZLjXwZyGJw1eHuTbr3x4/211y3NE5S+2srPSWx2UvcyswZAAAAAAAAAAAAAAhsCaCtBcbWk/Pr95MDgM7uMlHDUKSdo1qzc+lU43S7Wn5jodAWom9VXPRHmv4GnOuZ4Qqo6xswIQBAQBCAAEBCAgABiAWFmdxklWxNC/gSpwrJcCnGSi351JeijnfaC1E0W7nTnkqYuNkStm2lFp8KaOUlr2qlK8VfbbX18JAzAAAAAAAAAAAADCt4svJf5AbXsXUTArPPA/Awn8yt+mJ03s/81zshscDvqVqdO2CAICAIQAIEBASICAIQEIYQ7nNC/wDG1vuz/dgaLT/0aO38KuK+WFyUjkJa9qpfxeXP9TMRmAAAAAAAAAAAAGuv4r6dXawN1QygVXnfq+HhIcUa8+1wS/JnU+z9Oy7V2flssDGyqVeHRr4EIA67NtkKhjcRXhiYOcKdGM4pTnC0nO17xa4DTaZxl3D26JtTlnPDPzVcVdqopiaVg97nJv8AoS/EV/mOf11jOv4R+lLnV3ih5usm/wChP8RX+Ya5xnX8I/Rzq7xYzzc5NeyjNdKr1r+2RMaaxnW8I/Rzq7xc9l3NalFywNWWkte812mpdEaiSt50+tGww2n6s4i/Ts4x+nrRjJ/nCtMRQlTnKnUi4VIScZwkrSjJcDR0tFdNdMVUznErsTExnDAzEMCAh2OamrbKLjy8NVXnUoS9zNNpynPDRPCY/KviY+BddI4yprmun/F5cviYoZgAAAAAAAAAAABhPW4x42pPqjr/ADt2gbKzMqUwpTOZjd9yhKKd1h6UKX9TvN/rS8x2uhbXIw3Kn+UzP4/DbYSnK32uUNusoABDv8zP1rFfd4fuHOe0P07fbPko435aXb5wso1cPk6tVoTdOrGVFRmkm0pVYp6mmtjZpNGWaL2JporjONvkqWKYqriJVL3b5S53U9Cl8p1WqcJ1I8f22HN7fBuwu7/KVOSk66qrhhVpU3B+ik+xmFehsLVGXJy7JROGtz0LZ3JboI5QwqrqOhNSdOrTvfQqJJ6nxNNNdZy2NwlWGuzRO3pif6a+5bmirJwueHJkY1MPioq0qulRq/acVeD67aS8yN57P35mK7U9G2PytYSvZNKurnSLiAhAHs7jcaqGUMLUbtHfVTk/s1E4a/ST8xS0ja95hblMcM+7a8rsZ0TD9BUWcDU1bF6pv7SUl1rU/d2mCGYAAAAAAAAAAAwnK2pK8nsX/eADOnT0btu8ntfuXQB5e6LLFPCUJ1qj1RVox/inN+LFdL+JcwmGrxFyLdPT4Rxetq3NdXJhQWKxEqtSdSo71Ks5Tm/tSd35tZ39uim3RFFO6NjdxERERDUZgEIA7/M19axX3eH7hzvtD9O32z5KON+Wl1udJ/5VX8vD/vRNTob/AJlH++Uq+F+pH+qRO3htBhC3s0uBnSwU6k04rE1nUpp6m6agoqXnafmscfpy7TXiIpp/jGU9rXYqqJriI6HkZ48oRbw2GTvOLnXn9lNaMO3w+wt6AsznXd6N0ebPCU76lbHTLgBAQMC99wu6KONwsZNr6RSUadePCppeNbilt7VwHCaSwc4a9MfxnbHZ6Nbet8ip004KS18GtNbUzWy8GuLd9GW1cPBJcaIGYAAAAAAAAABjRV3KXE9FdCsn7/YB4m7fLNTB4OVeioOop04pVE3G0pWepNGw0dhacRfi3Xu27nvh7cXK4plS2Wcs18ZNTxFRzavox8WnBPkxWpde07XDYS1h6eTbjLzltqLdNEZUw88sswIQAA77M39axX3eH7hzvtB9O32z5KON+WlZWW8lU8XQlh6+lvc3FvRloyvGSktfWjnLF+uxci5RvhSormic4cz3tcBxV/XP4Gy15i+Mdz251cfXgdweT6MlNUd8ktm/TlUj6Dej7Dyu6WxdyMpry7NnqxnEXJ6X2bo8fiaFJvB4V4mpay8OEYQ6dC+lLqRXwtqzcryu18mP+9PQxoppmfinJRWUcRVq1qlTEOTrym3U01ozUtlnHgtstwWO5w9uii3TTb+XobKmIiMofOe7JAQAQEPpyblGrhqiq4epKlUjq0o8K4pJ6muhnlesW71HIuRnDGqmKoylc2bjdLWx9KtLEKnpUakIJ04uOknG92m3r6jjtLYG3hblMW88pjpUL9uKJjJ1uIWpS4YtdjaTX5dhp3gkAAAAAAAAAAjD/wAS4pv8k/eB8OXMl0sVSdGvFzptqTSlKLundO8XctYe/XZriuicpeluuqic6d6qt2G4l4WLr4dyqUI+PCWupSXKutsfaung6nR+lvfVRbu7KuieifVsbGJ5fw1b3Gm7WkAAICHfZnPrWK+7w/cOd9oPp2+2fJSxm6l2mcDH1cPk6tVoTdOrGVFRmrNpOrFPb0Nml0bZou4mmiuM42+SrYpiquIlVC3Z5R53U9Gn8p1WqsL1I8f2ve4t8GdHdzlGLv8ASZS+zOnSlF/7b+0xq0RhZj5PGUTYt8Fgbht2v05yoV4xp4mMdNOF97qxW1pPY1darmg0jo2cNlXTOdPjCres8jbG5qzl7noVsNPFQiliMNHTlJanUorxlLpSu0+ho9NEY2q1di1M/DV4SnD3JirkzulUR168AQEIA6fcduQnj26k5OlhovRc0v8AyVJLaoX1auF+bq1ekNJU4b4aYzq8I7XjduxR2rf3N5AoYKEoYeLiptSm5TlOUpJWTd/ccni8XdxNUVXJzyUa65rna9fEeI+lx/UijLzSAAAAAAAAAAYN6L0lrTVpJbbcD82sDa0mrrWnrRMSPixVBSTUknGSaaexprWme9FcxthlEqDy/k76Liq1Dgpz8C/DTa0o+xo73CX/AH9mi5x39vS3Vuvl0xU88ss0BAB3uZ5/4nFfyIfuHPe0H07fbPkpYzdS6vOc/wDK6/l0P3oGq0P/AMuj/fKVfDfUj/VKnbQ2Qwh0ubajKWVKDjspxrzn0Q3qUf1TianTFVMYWqJ6csu/P8PHET8EreyzOKw2Ic/EWHrOV9mjvbucnYifeURG/OFCnfGT88Q2LqPoTaJYQgDZhqEqtSFOHj1Zxpx8qUkl+Zjcriiiap3RGaJnLa/Q2RsmwoUadGmrQpQUF022t9Ld35z5/fvVXa6q6t8y1lVWczL1oQKsywapS02reLHXfglLo6EYoZgAAAAAAAAAADCHgyVvFm7NcCltv5wMq0TOmUwp/OvhdHGUqi/+tCz64Tfukuw6/QVzOzVTwnz/APGzwdWdExwcSbxaQwICHe5n/rOK/kQ/cOe0/wDTt9s+Sni91Lvd1WSHjcJUwymqbqOm9Nx0ktGalsuuI0WCxHN70XMs8s/JUtV8irNw3esqc7h6iXzG81/T9ue/0WudxwZUs1jv4eLWjw6FDwu1yMatP7Pht+PoicV/Ts9zu52hgYONBNynbfKs3epO2y72JdCNPisZdxNUTXO7dHRCvXcmudrnc5u6KNKhLB05J18QkqiT/wDVRet36ZbLcTb4i/ojB1XLsXao+GN39z6PWxbznlSqc62FxAAIdJm6wu+ZToX2UlUqv+mDS9ska3S9zkYWv+8oeV6cqJXvQicPVLXSVvClo/wpJy6XwL2HmhmAAAAAAAAAAAAGuvsvxOMuxpgbqhlCVW54af1SXTXj2qD9x0/s/Vtux2flfwc/Mrc6VeQEAQ9vcnukeT6lWpGkq2+wUHFzdO1pXvezNdpDA86ppjlZZT2/p5XbXLiHTd9WfM4/iH8hq9Q//Tw9VfmscUd9WfM4/iX8g1DH3PD1OaxxQ86s+Zw/EN/8CdQx9zw9TmscXlZTziY2snGnveGi+GmnKr6cr+xItWdC2KJzqzq7d3dDOnD0xv2uSnJtuUm5Sk25Sk25Nva23wm4ppimIiHtkgyEBAB22aOnfH1JcnCz9tSmaXTs5YemP7/Eq+In4YXRSOOqUWENs3xyt2JL3GCGYAAAAAAAAAAAAa6/iS8l/kBunsJgVjni8TCfzK36YnTez/zXOyF/B76lZnTryAAQhhCAgAgZIAICEBABAQ7rM/8AXa/3V/uwNHp/6FHb+FfEfLC5qRx9Si10uHy5/qZiMwAAAAAAAAAAAAxmrprjTQGcHeEXxxT9hMDjc5WRpYnCXppyq4ee/RildyjZqcV02d/6Tc6IxUWL/wAW6rZ+lrDXIpr29Kl7naNmBAEIYEBCAAQgIQEAEBABa2aPIsqdKpippp4jRhSTVnvUW25dTb1eTc5XTuKiuum1T/Hf2+ipiKs5yWXTOdlUaaHi35Tcu1395iNgAAAAAAAAAAAAAMaDtePE215L/uBFamelMphxmX9wOGxM3UjpUKsneUqVtCT43B6r9VjcYXS9+zTFPzR/azRiaqYy3vD72Eecz9TH5i9r6rqR3+j153PA72Eecz9TH5hr6rqR3+iOdzwR3r485n6mPzDX1XUjv9DnU8DvXx5zP1MfmGvqupHf6HOp4HeujzmfqY/MNfVdSO/0OdTwR3ro85n6mPzDX1XUjv8ARHOZ4HeujzqfqY/MNfVdSO/0OczwO9bHnU/Ux+Ya+q6kd/oc5ngd62POp+pj8w19V1I7/RHOZ4Hesjzqp6mPzDX1XUjv9DnM8Hp5Hza4alJTrSniWtajNKNK/TBbepuxWxGm79cZUZU9m/vY1Yiqd2x3lClaySslqtwJGjqqzV5lsrvwdFbZeD5uF9h5MRICQAAAAAAAAAAAAAYTjsa1SWx+59AGdOqpanqlwx+HGgJlTMoqSwdEy5QbyOUZo3kcozTvI5RmbyOWZm8jlGZvI5RmjeRyjM3kcozTvI5QyjSMZqEzqKO3bwJa5PzEZoa4pt6UttrJcEVxEDMAAAAAAAAAAAAAAABjKCe1J9YEb3xOS/qbXYwFpcuXZH4ALS5b7I/ABaXLfZH4ALS5b7I/ABaXLfZH4ALS5b7I/ABaXLfZH4ALS5b7I/ABaXLfZH4ALS5b7I/ABoPhlJ+e35ATCCWxJAZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/9k=" width="300"/>
+      </a>
       <h3 class="text-2xl font-bold mb-2">
        Project Three
       </h3>
@@ -120,7 +134,9 @@
       </p>
      </div>
      <div class="bg-white p-6 rounded-lg shadow-lg">
-      <img alt="Project 4 screenshot" class="rounded-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/EoLI3D0uLoJYLBnaUXOSXaAXwIRD0StNZVsgQbM15ROEUuBF.jpg" width="300"/>
+      <a href="https://anujsarode1.github.io/anujsarode/usaflag.html">
+      <img alt="Project 4 screenshot" class="rounded-lg mb-4" height="200" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1nxTQei3SE0yKsz32PvIr92ImQn5c81c9eEGAU8EuC2a5VM_49WRfCorjiUtiDr7a92s&usqp=CAU" width="300"/>
+      </a>
       <h3 class="text-2xl font-bold mb-2">
        Project Four
       </h3>
@@ -129,7 +145,9 @@
       </p>
      </div>
      <div class="bg-white p-6 rounded-lg shadow-lg">
-      <img alt="Project 5 screenshot" class="rounded-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/RcRgHHyvJTqrJ5kg9tIdrtqhGTIFvFQejYPnKH95mkhLocDKA.jpg" width="300"/>
+      <a href="https://anujsarode1.github.io/anujsarode/Actors.html">
+      <img alt="Project 5 screenshot" class="rounded-lg mb-4" height="200" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSvVPX2Qi0oPjACUE1eo_pBpJPBmDKoTTWMJ9eVhWZPcXav3YeC" width="300"/>
+      </a>
       <h3 class="text-2xl font-bold mb-2">
        Project Five
       </h3>
@@ -138,7 +156,9 @@
       </p>
      </div>
      <div class="bg-white p-6 rounded-lg shadow-lg">
-      <img alt="Project 6 screenshot" class="rounded-lg mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/9UNurFdDfhyxTapuqLm1a9sgSgRtLVeS74eG2IiIdkm2gyNoA.jpg" width="300"/>
+      <a href="https://anujsarode1.github.io/anujsarode/trybox.html">
+      <img alt="Project 6 screenshot" class="rounded-lg mb-4" height="200" src="https://cdn3.iconfinder.com/data/icons/layout-line-2/48/items_flexbox-512.png" width="300"/>
+      </a>
       <h3 class="text-2xl font-bold mb-2">
        Project Six
       </h3>
@@ -148,13 +168,13 @@
      </div>
     </div>
    </section>
-   <section class="flex flex-col items-center mt-24 sm:px-6 md:px-8 lg:px-16">
+   <section id="Services" class="flex flex-col items-center mt-24 sm:px-6 md:px-8 lg:px-16">
     <h2 class="text-3xl font-bold mb-4 text-center">
      Services
     </h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
      <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-      <i class="fas fa-code text-4xl text-pink-500 mb-4">
+      <i class="fas fa-code text-4xl text-black-500 mb-4">
       </i>
       <h3 class="text-xl font-bold mb-2">
        Web Development
@@ -164,7 +184,7 @@
       </p>
      </div>
      <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-      <i class="fas fa-mobile-alt text-4xl text-pink-500 mb-4">
+      <i class="fas fa-mobile-alt text-4xl text-black-500 mb-4">
       </i>
       <h3 class="text-xl font-bold mb-2">
        Mobile Development
@@ -174,7 +194,7 @@
       </p>
      </div>
      <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-      <i class="fas fa-paint-brush text-4xl text-pink-500 mb-4">
+      <i class="fas fa-paint-brush text-4xl text-black-500 mb-4">
       </i>
       <h3 class="text-xl font-bold mb-2">
        UI/UX Design
@@ -184,7 +204,7 @@
       </p>
      </div>
      <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-      <i class="fas fa-chart-line text-4xl text-pink-500 mb-4">
+      <i class="fa-light fa-database text-4xl text-black-500 mb-4">
       </i>
       <h3 class="text-xl font-bold mb-2">
        Data Analytics
@@ -194,7 +214,7 @@
       </p>
      </div>
      <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-      <i class="fas fa-cloud text-4xl text-pink-500 mb-4">
+      <i class="fas fa-cloud text-4xl text-black-500 mb-4">
       </i>
       <h3 class="text-xl font-bold mb-2">
        Cloud Services
@@ -204,7 +224,7 @@
       </p>
      </div>
      <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-      <i class="fas fa-shield-alt text-4xl text-pink-500 mb-4">
+      <i class="fas fa-shield-alt text-4xl text-black-500 mb-4">
       </i>
       <h3 class="text-xl font-bold mb-2">
        Cybersecurity
@@ -215,7 +235,7 @@
      </div>
     </div>
    </section>
-   <section class="mt-16 px-4 sm:px-0 md:px-8 lg:px-16 w-full max-w-4xl">
+   <section id="Contact" class="mt-16 px-4 sm:px-0 md:px-8 lg:px-16 w-full max-w-4xl">
     <h2 class="text-3xl font-bold mb-4 text-center">
      Contact
     </h2>
