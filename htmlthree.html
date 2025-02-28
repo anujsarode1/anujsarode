@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+      .grid {
+            display: grid;
+            grid-template-columns: (4, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Card Styles */
+        .bg-white {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .bg-white img {
+            border-radius: 0.5rem;
+            width: 100%;
+            height: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .bg-white h3 {
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .bg-white p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Link Styles */
+        a {
+            text-decoration: none;
+        }
+
+        /* Responsive Media Queries */
+        @media (min-width: 768px) {
+            #Projects {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+
+        /* Additional Styling */
+        .text-gray-600 {
+            color: #4b4b4b;
+        }
+
+        .text-4xl {
+            font-size: 2.25rem;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .p-6 {
+            padding: 1.5rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        .shadow-lg {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* icon */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 30px;
+        }
+
+</style>
+<body>
+    <section id="Projects" class="mt-16 custom-padding w-full max-w-6xl">
+    <h2 class="text-4xl font-bold mb-4 text-center">
+        Projects
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <a href="https://anujsarode1.github.io/anujsarode/boot.html">
+                <img alt="Project 1 screenshot" class="rounded-lg mb-4" height="200"
+                    src="https://getbootstrap.com/docs/5.3/assets/img/bootstrap-icons.png"
+                    width="300">
+            </a>
+            <h3 class="text-2xl font-bold mb-2">
+
+            </h3>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <a href="https://anujsarode1.github.io/anujsarode/restaurent-menu.html">
+                <img alt="Project 2 screenshot" class="rounded-lg mb-4" height="200"
+                    src="https://getbootstrap.com/docs/5.3/assets/img/bootstrap-icons.png"
+                    width="300">
+            </a>
+            <h3 class="text-2xl font-bold mb-2">
+
+            </h3>
+        </div>
+        
+    </div>
+</section>
+</body>
+</html>
