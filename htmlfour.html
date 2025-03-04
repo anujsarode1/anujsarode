@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+      .grid {
+            display: grid;
+            grid-template-columns: (4, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .bg-white {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .bg-white img {
+            border-radius: 0.5rem;
+            width: 100%;
+            height: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .bg-white h3 {
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .bg-white p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Media Queries */
+        @media (min-width: 768px) {
+            #Projects {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+
+        .text-gray-600 {
+            color: #4b4b4b;
+        }
+
+        .text-4xl {
+            font-size: 2.25rem;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .p-6 {
+            padding: 1.5rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        .shadow-lg {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 30px;
+        }
+
+</style>
+<body>
+    <section id="Projects" class="mt-16 custom-padding w-full max-w-6xl">
+    <h2 class="text-4xl font-bold mb-4 text-center">
+        Projects
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <a href="https://anujsarode1.github.io/anujsarode/signin.html">
+                <img alt="Project 1 screenshot" class="rounded-lg mb-4" height="200"
+                    src="https://thumbs.dreamstime.com/b/sign-up-icon-flat-style-finger-cursor-vector-illustration-white-isolated-background-click-button-business-concept-143479797.jpg"
+                    width="300">
+            </a>
+            <h3 class="text-2xl font-bold mb-2">
+
+            </h3>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <a href="https://anujsarode1.github.io/anujsarode/chess-one.html">
+                <img alt="Project 2 screenshot" class="rounded-lg mb-4" height="200"
+                    src="https://media.istockphoto.com/id/1165280768/vector/strategy-line-icon.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=ljhlpr7WJfc7zaAeId9QPGxWtcAN52CVx6EC8XmNGq8="
+                    width="300">
+            </a>
+            <h3 class="text-2xl font-bold mb-2">
+
+            </h3>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <a href="https://anujsarode1.github.io/anujsarode/restaurent-menu.html">
+                <img alt="Project 3 screenshot" class="rounded-lg mb-4" height="200"
+                    src="https://ayltoninacio.com.br/img/p/180w1500.jpg" width="300">
+            </a>
+            <h3 class="text-2xl font-bold mb-2">
+
+            </h3>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <a href="https://anujsarode1.github.io/anujsarode/usaflag.html">
+                <img alt="Project 4 screenshot" class="rounded-lg mb-4" height="200"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1nxTQei3SE0yKsz32PvIr92ImQn5c81c9eEGAU8EuC2a5VM_49WRfCorjiUtiDr7a92s&amp;usqp=CAU"
+                    width="300">
+            </a>
+            <h3 class="text-2xl font-bold mb-2">
+
+            </h3>
+        </div>
+    </div>
+</section>
+</body>
+</html>
