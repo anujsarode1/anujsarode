@@ -1,0 +1,217 @@
+ /* General reset and base styles */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #8b8882;
+    text-decoration: underline;
+}
+
+/* Hero section styles */
+.hero {
+    height: 100vh;
+    background: url('https://www.harvard.edu/wp-content/uploads/2023/11/110823_Features_KS_713-scaled.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.hero-content {
+    max-width: 700px;
+    padding: 30px;
+    /* background: rgba(0, 0, 0, 0.5); */
+    font-family: Trueno;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    font-size: 4rem; /* Adjust font size based on screen */
+}
+
+.hero p {
+    font-size: 1.5rem; /* Larger text */
+}
+
+/* Info section styles */
+.info {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 80px 50px;
+    background-color: #fff;
+}
+
+.info .card {
+    background: #f0f0f0;
+    padding: 40px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.info .card h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.info .card p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 30px 50px;
+    background-color: #333;
+    color: white;
+}
+
+footer p {
+    font-size: 1.2rem;
+}
+
+/* Media Queries for Small Screens (Tablets and Mobiles) */
+@media screen and (max-width: 370px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+      }
+
+    .logo img {
+        height: 40px; /* Adjust logo size for mobile screens */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 15px;
+        padding-left: 0;
+        margin-top: 20px; /* Add spacing between logo and nav */
+    }
+
+    header nav ul li {
+        width: 100%;
+        text-align: left; /* Align links to the left */
+    }
+
+    header nav ul li a {
+        padding: 10px 0; /* Add padding to links for easier tapping */
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .hero {
+        height: 70vh; /* Adjust height for smaller screens */
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 3rem; /* Smaller font for mobile screens */
+    }
+
+    .hero p {
+        font-size: 1.2rem; /* Smaller text */
+    }
+
+    .info {
+        flex-direction: column;
+        padding: 40px 20px; /* Adjust padding */
+    }
+
+    .info .card {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    footer {
+        padding: 20px 20px;
+    }
+}
+
+/* Media Queries for Large Screens */
+@media screen and (min-width: 1200px) {
+    header {
+        padding: 30px 100px;
+    }
+
+    .hero-content {
+        max-width: 900px;
+    }
+
+    .hero h1 {
+        font-size: 5rem;
+    }
+
+    .hero p {
+        font-size: 1.8rem;
+    }
+
+    .info {
+        padding: 100px 100px;
+    }
+
+    .info .card {
+        width: 25%;
+    }
+
+    .info .card h3 {
+        font-size: 2.2rem;
+    }
+
+    .info .card p {
+        font-size: 1.3rem;
+    }
+
+    footer {
+        padding: 40px 100px;
+    }
+}
