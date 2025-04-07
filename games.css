@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+  }
+  
+  .game-container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    background-color: #111;
+    overflow: hidden;
+    border: 2px solid #fff;
+  }
+  
+  .spaceship {
+    position: absolute;
+    bottom: 20px;
+    left: 375px;
+    width: 50px;
+    height: 40px;
+    background-color: blue;
+  }
+  
+  .monsters-container {
+    position: absolute;
+  }
+  
+  .monster {
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    background-color: green;
+  }
+  
+  .bullet {
+    position: absolute;
+    width: 5px;
+    height: 15px;
+    background-color: red;
+  }
+  
+  
