@@ -14,10 +14,13 @@
             align-items: center;
             height: 100vh;
             overflow: hidden;
+            flex-direction: column;
+            text-align: center;
         }
         canvas {
             background-color: white;
             /* border: 2px solid black; */
+            display: none; /* Hide the canvas initially */
         }
         #score {
             position: absolute;
@@ -42,6 +45,20 @@
             color: red;
             font-weight: bold;
             display: none;
+        }
+        #startButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+        }
+        #startButton:hover {
+            background-color: #45a049;
         }
 
         /* Media query for small screens (mobile) */
@@ -74,10 +91,15 @@
     <div id="lives">Lives: 3</div>
     <div id="gameOver">Game Over!</div>
     <canvas id="gameCanvas" width="600" height="400"></canvas>
+    <button id="startButton">Start Game</button>
 
     <script>
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
+        const startButton = document.getElementById('startButton');
+        const gameOverText = document.getElementById('gameOver');
+        const scoreText = document.getElementById('score');
+        const livesText = document.getElementById('lives');
 
         let basketWidth = 100;
         let basketHeight = 20;
@@ -87,14 +109,14 @@
 
         let pokemonImage = new Image();
         pokemonImage.src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'; // Pikachu image URL
-        let pokemonWidth = 100; // Adjust the width and height of the Pokémon image
+        let pokemonWidth = 100;
         let pokemonHeight = 100;
         let pokemonX = Math.random() * (canvas.width - pokemonWidth);
         let pokemonY = -pokemonHeight;
-        let pokemonSpeed = 3;
+        let pokemonSpeed = 2;
 
         let score = 0;
-        let lives = 1;
+        let lives = 3;
         let gameOver = false;
 
         // Handle mouse move event for moving the basket
@@ -128,15 +150,17 @@
 
         // Draw the score and lives
         function drawScoreAndLives() {
-            document.getElementById('score').innerText = `Score: ${score}`;
-            document.getElementById('lives').innerText = `Lives: ${lives}`;
+            scoreText.innerText = `Score: ${score}`;
+            livesText.innerText = `Lives: ${lives}`;
         }
 
         // Game Over condition
         function gameOverCheck() {
             if (lives <= 0) {
                 gameOver = true;
-                document.getElementById('gameOver').style.display = 'block';
+                gameOverText.style.display = 'block';
+                startButton.style.display = 'block'; // Show the start button after game over
+                canvas.style.display = 'none'; // Hide the canvas when the game is over
             }
         }
 
@@ -176,6 +200,19 @@
             // Request next frame
             requestAnimationFrame(gameLoop);
         }
+
+        // Start the game when the Start Game button is clicked
+        startButton.addEventListener('click', () => {
+            // Reset game state
+            score = 0;
+            lives = 3;
+            gameOver = false;
+            pokemonY = -pokemonHeight; // Start the Pokémon at the top
+            gameOverText.style.display = 'none'; // Hide Game Over text
+            startButton.style.display = 'none'; // Hide Start button
+            canvas.style.display = 'block'; // Show the canvas
+            gameLoop(); // Start the game loop
+        });
 
         // Start the game loop when the image has loaded
         pokemonImage.onload = function() {
