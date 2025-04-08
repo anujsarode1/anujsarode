@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,6 +39,231 @@
         #gameOver {
             position: absolute;
             top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            color: red;
+            font-weight: bold;
+            display: none;
+        }
+        #startButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+        }
+        #startButton:hover {
+            background-color: #45a049;
+        }
+
+        /* Media query for small screens (mobile) */
+        @media only screen and (max-width: 768px) {
+            canvas {
+                width: 100%;
+                height: 60%;
+            }
+            #score, #lives {
+                font-size: 16px;
+            }
+            #gameOver {
+                font-size: 30px;
+            }
+        }
+
+        /* Media query for extra small screens (portrait mobile) */
+        @media only screen and (max-width: 480px) {
+            #score, #lives {
+                font-size: 14px;
+            }
+            #gameOver {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="score">Score: 0</div>
+    <div id="lives">Lives: 3</div>
+    <div id="gameOver">Game Over!</div>
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+    <button id="startButton">Start Game</button>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const startButton = document.getElementById('startButton');
+        const gameOverText = document.getElementById('gameOver');
+        const scoreText = document.getElementById('score');
+        const livesText = document.getElementById('lives');
+
+        let basketWidth = 100;
+        let basketHeight = 20;
+        let basketX = canvas.width / 2 - basketWidth / 2;
+        let basketSpeed = 5;
+        let basketDirection = 0;
+
+        let pokemonImage = new Image();
+        pokemonImage.src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'; // Pikachu image URL
+        let pokemonWidth = 100;
+        let pokemonHeight = 100;
+        let pokemonX = Math.random() * (canvas.width - pokemonWidth);
+        let pokemonY = -pokemonHeight;
+        let pokemonSpeed = 2;
+
+        let score = 0;
+        let lives = 3;
+        let gameOver = false;
+
+        // Handle mouse move event for moving the basket
+        canvas.addEventListener('mousemove', (event) => {
+            basketX = event.clientX - canvas.offsetLeft - basketWidth / 2;
+            // Prevent the basket from going off screen
+            if (basketX < 0) basketX = 0;
+            if (basketX + basketWidth > canvas.width) basketX = canvas.width - basketWidth;
+        });
+
+        // Handle touchmove event for moving the basket on mobile devices
+        canvas.addEventListener('touchmove', (event) => {
+            const touch = event.touches[0];
+            basketX = touch.clientX - canvas.offsetLeft - basketWidth / 2;
+            // Prevent the basket from going off screen
+            if (basketX < 0) basketX = 0;
+            if (basketX + basketWidth > canvas.width) basketX = canvas.width - basketWidth;
+            event.preventDefault(); // Prevent scrolling on touch devices
+        });
+
+        // Draw the basket on the canvas
+        function drawBasket() {
+            ctx.fillStyle = '#ee1515';
+            ctx.fillRect(basketX, canvas.height - basketHeight - 10, basketWidth, basketHeight);
+        }
+
+        // Draw the Pokémon on the canvas
+        function drawPokemon() {
+            ctx.drawImage(pokemonImage, pokemonX, pokemonY, pokemonWidth, pokemonHeight);
+        }
+
+        // Draw the score and lives
+        function drawScoreAndLives() {
+            scoreText.innerText = `Score: ${score}`;
+            livesText.innerText = `Lives: ${lives}`;
+        }
+
+        // Game Over condition
+        function gameOverCheck() {
+            if (lives <= 0) {
+                gameOver = true;
+                gameOverText.style.display = 'block';
+                startButton.style.display = 'block'; // Show the start button after game over
+                canvas.style.display = 'none'; // Hide the canvas when the game is over
+            }
+        }
+
+        // Main game loop
+        function gameLoop() {
+            if (gameOver) return;
+
+            // Clear the canvas for the next frame
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Move the Pokémon
+            pokemonY += pokemonSpeed;
+
+            // Check for collision with the basket
+            if (pokemonY + pokemonHeight > canvas.height - basketHeight - 10 &&
+                pokemonX + pokemonWidth > basketX && pokemonX < basketX + basketWidth) {
+                score++;
+                pokemonX = Math.random() * (canvas.width - pokemonWidth);
+                pokemonY = -pokemonHeight; // Reset Pokémon to top
+            }
+
+            // Check if the Pokémon falls off the screen
+            if (pokemonY > canvas.height) {
+                lives--;
+                pokemonX = Math.random() * (canvas.width - pokemonWidth);
+                pokemonY = -pokemonHeight; // Reset Pokémon to top
+            }
+
+            // Draw everything
+            drawBasket();
+            drawPokemon();
+            drawScoreAndLives();
+
+            // Check for Game Over
+            gameOverCheck();
+
+            // Request next frame
+            requestAnimationFrame(gameLoop);
+        }
+
+        // Start the game when the Start Game button is clicked
+        startButton.addEventListener('click', () => {
+            // Reset game state
+            score = 0;
+            lives = 3;
+            gameOver = false;
+            pokemonY = -pokemonHeight; // Start the Pokémon at the top
+            gameOverText.style.display = 'none'; // Hide Game Over text
+            startButton.style.display = 'none'; // Hide Start button
+            canvas.style.display = 'block'; // Show the canvas
+            gameLoop(); // Start the game loop
+        });
+
+        // Start the game loop when the image has loaded
+        pokemonImage.onload = function() {
+            gameLoop();
+        };
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Pokémon Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            flex-direction: column;
+            text-align: center;
+        }
+        canvas {
+            background-color: white;
+            /* border: 2px solid black; */
+            display: none; /* Hide the canvas initially */
+        }
+        #score {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 20px;
+            color: black;
+        }
+        #lives {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 20px;
+            color: black;
+        }
+        #gameOver {
+            position: absolute;
+            top: 30%;
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 40px;
