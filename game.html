@@ -19,8 +19,7 @@
         }
         canvas {
             background-color: white;
-            /* border: 2px solid black; */
-            display: none; /* Hide the canvas initially */
+            display: none;
         }
         #score {
             position: absolute;
@@ -38,7 +37,7 @@
         }
         #gameOver {
             position: absolute;
-            top: 50%;
+            top: 30%;
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 40px;
@@ -60,30 +59,6 @@
         #startButton:hover {
             background-color: #45a049;
         }
-
-        /* Media query for small screens (mobile) */
-        @media only screen and (max-width: 768px) {
-            canvas {
-                width: 100%;
-                height: 60%;
-            }
-            #score, #lives {
-                font-size: 16px;
-            }
-            #gameOver {
-                font-size: 30px;
-            }
-        }
-
-        /* Media query for extra small screens (portrait mobile) */
-        @media only screen and (max-width: 480px) {
-            #score, #lives {
-                font-size: 14px;
-            }
-            #gameOver {
-                font-size: 28px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -104,8 +79,8 @@
         let basketWidth = 100;
         let basketHeight = 20;
         let basketX = canvas.width / 2 - basketWidth / 2;
-        let basketSpeed = 5;
-        let basketDirection = 0;
+        let basketSpeed = 0.05; // Smooth speed for movement
+        let basketVelocity = 0;
 
         let pokemonImage = new Image();
         pokemonImage.src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'; // Pikachu image URL
@@ -113,7 +88,8 @@
         let pokemonHeight = 100;
         let pokemonX = Math.random() * (canvas.width - pokemonWidth);
         let pokemonY = -pokemonHeight;
-        let pokemonSpeed = 2;
+        let pokemonVelocityY = 0.8; // Y velocity for gravity effect
+        let gravity = 0.03; // Simulate gravity
 
         let score = 0;
         let lives = 3;
@@ -122,7 +98,6 @@
         // Handle mouse move event for moving the basket
         canvas.addEventListener('mousemove', (event) => {
             basketX = event.clientX - canvas.offsetLeft - basketWidth / 2;
-            // Prevent the basket from going off screen
             if (basketX < 0) basketX = 0;
             if (basketX + basketWidth > canvas.width) basketX = canvas.width - basketWidth;
         });
@@ -131,7 +106,6 @@
         canvas.addEventListener('touchmove', (event) => {
             const touch = event.touches[0];
             basketX = touch.clientX - canvas.offsetLeft - basketWidth / 2;
-            // Prevent the basket from going off screen
             if (basketX < 0) basketX = 0;
             if (basketX + basketWidth > canvas.width) basketX = canvas.width - basketWidth;
             event.preventDefault(); // Prevent scrolling on touch devices
@@ -171,13 +145,15 @@
             // Clear the canvas for the next frame
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Move the Pokémon
-            pokemonY += pokemonSpeed;
+            // Apply gravity to the Pokémon's vertical velocity
+            pokemonVelocityY += gravity;
+            pokemonY += pokemonVelocityY;
 
             // Check for collision with the basket
             if (pokemonY + pokemonHeight > canvas.height - basketHeight - 10 &&
                 pokemonX + pokemonWidth > basketX && pokemonX < basketX + basketWidth) {
                 score++;
+                pokemonVelocityY = -2; // Bounce effect on collision
                 pokemonX = Math.random() * (canvas.width - pokemonWidth);
                 pokemonY = -pokemonHeight; // Reset Pokémon to top
             }
@@ -185,6 +161,7 @@
             // Check if the Pokémon falls off the screen
             if (pokemonY > canvas.height) {
                 lives--;
+                pokemonVelocityY = 0; // Stop falling
                 pokemonX = Math.random() * (canvas.width - pokemonWidth);
                 pokemonY = -pokemonHeight; // Reset Pokémon to top
             }
@@ -208,6 +185,7 @@
             lives = 3;
             gameOver = false;
             pokemonY = -pokemonHeight; // Start the Pokémon at the top
+            pokemonVelocityY = 0; // Reset Pokémon velocity
             gameOverText.style.display = 'none'; // Hide Game Over text
             startButton.style.display = 'none'; // Hide Start button
             canvas.style.display = 'block'; // Show the canvas
@@ -221,6 +199,7 @@
     </script>
 </body>
 </html> -->
+
 
 
 <!DOCTYPE html>
@@ -244,8 +223,7 @@
         }
         canvas {
             background-color: white;
-            /* border: 2px solid black; */
-            display: none; /* Hide the canvas initially */
+            display: none;
         }
         #score {
             position: absolute;
@@ -286,27 +264,26 @@
             background-color: #45a049;
         }
 
-        /* Media query for small screens (mobile) */
-        @media only screen and (max-width: 768px) {
-            canvas {
-                width: 100%;
-                height: 60%;
-            }
+        /* Mobile-specific styles */
+        @media (max-width: 600px) {
             #score, #lives {
                 font-size: 16px;
             }
             #gameOver {
                 font-size: 30px;
             }
-        }
-
-        /* Media query for extra small screens (portrait mobile) */
-        @media only screen and (max-width: 480px) {
-            #score, #lives {
-                font-size: 14px;
+            #startButton {
+                font-size: 16px;
+                padding: 8px 16px;
             }
-            #gameOver {
-                font-size: 28px;
+
+            canvas {
+                width: 100%;
+                height: auto;
+            }
+
+            body {
+                padding: 10px;
             }
         }
     </style>
@@ -329,8 +306,8 @@
         let basketWidth = 100;
         let basketHeight = 20;
         let basketX = canvas.width / 2 - basketWidth / 2;
-        let basketSpeed = 5;
-        let basketDirection = 0;
+        let basketSpeed = 0.05; // Smooth speed for movement
+        let basketVelocity = 0;
 
         let pokemonImage = new Image();
         pokemonImage.src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'; // Pikachu image URL
@@ -338,7 +315,8 @@
         let pokemonHeight = 100;
         let pokemonX = Math.random() * (canvas.width - pokemonWidth);
         let pokemonY = -pokemonHeight;
-        let pokemonSpeed = 2;
+        let pokemonVelocityY = 0.8; // Y velocity for gravity effect
+        let gravity = 0.03; // Simulate gravity
 
         let score = 0;
         let lives = 3;
@@ -347,7 +325,6 @@
         // Handle mouse move event for moving the basket
         canvas.addEventListener('mousemove', (event) => {
             basketX = event.clientX - canvas.offsetLeft - basketWidth / 2;
-            // Prevent the basket from going off screen
             if (basketX < 0) basketX = 0;
             if (basketX + basketWidth > canvas.width) basketX = canvas.width - basketWidth;
         });
@@ -356,7 +333,6 @@
         canvas.addEventListener('touchmove', (event) => {
             const touch = event.touches[0];
             basketX = touch.clientX - canvas.offsetLeft - basketWidth / 2;
-            // Prevent the basket from going off screen
             if (basketX < 0) basketX = 0;
             if (basketX + basketWidth > canvas.width) basketX = canvas.width - basketWidth;
             event.preventDefault(); // Prevent scrolling on touch devices
@@ -396,13 +372,15 @@
             // Clear the canvas for the next frame
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Move the Pokémon
-            pokemonY += pokemonSpeed;
+            // Apply gravity to the Pokémon's vertical velocity
+            pokemonVelocityY += gravity;
+            pokemonY += pokemonVelocityY;
 
             // Check for collision with the basket
             if (pokemonY + pokemonHeight > canvas.height - basketHeight - 10 &&
                 pokemonX + pokemonWidth > basketX && pokemonX < basketX + basketWidth) {
                 score++;
+                pokemonVelocityY = -2; // Bounce effect on collision
                 pokemonX = Math.random() * (canvas.width - pokemonWidth);
                 pokemonY = -pokemonHeight; // Reset Pokémon to top
             }
@@ -410,6 +388,7 @@
             // Check if the Pokémon falls off the screen
             if (pokemonY > canvas.height) {
                 lives--;
+                pokemonVelocityY = 0; // Stop falling
                 pokemonX = Math.random() * (canvas.width - pokemonWidth);
                 pokemonY = -pokemonHeight; // Reset Pokémon to top
             }
@@ -433,6 +412,7 @@
             lives = 3;
             gameOver = false;
             pokemonY = -pokemonHeight; // Start the Pokémon at the top
+            pokemonVelocityY = 0; // Reset Pokémon velocity
             gameOverText.style.display = 'none'; // Hide Game Over text
             startButton.style.display = 'none'; // Hide Start button
             canvas.style.display = 'block'; // Show the canvas
