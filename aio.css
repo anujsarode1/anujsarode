@@ -76,37 +76,6 @@ header nav ul li a:hover {
 }
 
 /* Info section styles */
-.info {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 80px 50px;
-    background-color: #fff;
-}
-
-.info .card {
-    background: #f0f0f0;
-    padding: 40px;
-    width: 30%;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.info .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.info .card h3 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.info .card p {
-    font-size: 1.2rem;
-    color: #555;
-}
 
 /* Footer styles */
 footer {
@@ -151,6 +120,8 @@ footer p {
 
     .hero {
         height: 70vh; /* Adjust height for smaller screens */
+    width: 162vw;
+
         padding: 50px 20px;
     }
 
@@ -162,15 +133,7 @@ footer p {
         font-size: 1.2rem; /* Smaller text */
     }
 
-    .info {
-        flex-direction: column;
-        padding: 40px 20px; /* Adjust padding */
-    }
-
-    .info .card {
-        width: 80%;
-        margin: 10px auto;
-    }
+    
 
     footer {
         padding: 20px 20px;
@@ -195,21 +158,6 @@ footer p {
         font-size: 1.8rem;
     }
 
-    .info {
-        padding: 100px 100px;
-    }
-
-    .info .card {
-        width: 25%;
-    }
-
-    .info .card h3 {
-        font-size: 2.2rem;
-    }
-
-    .info .card p {
-        font-size: 1.3rem;
-    }
 
     footer {
         padding: 40px 100px;
