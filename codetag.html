@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML Previewer</title>
+  <style>
+    :root {
+      --bg-color: #FF1E00;
+      --editor-bg: #1e293b;
+      --editor-border: #334155;
+      --text-color: #f8fafc;
+      --button-bg: white;
+      --button-hover: grey;
+      --output-bg: #f1f5f9;
+    } 
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+
+    header {
+      padding: 1rem 2rem;
+      background-color: #ffffff;
+      text-align: center;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--button-bg);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .editor, .output {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 300px;
+      min-height: 400px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .editor {
+      background-color: black;
+      padding: 1rem;
+      border: 1px solid var(--editor-border);
+      /* border-radius: 12px; */
+    }
+
+    textarea {
+      flex: 1;
+      background-color: black;
+      color: var(--text-color);
+      border: none;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 14px;
+      /* border-radius: 8px; */
+      outline: none;
+      resize: none;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    iframe {
+      flex: 1;
+      border: none;
+      min-height: 300px;
+      /* border-radius: 8px; */
+      background-color: var(--output-bg);
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 16px;
+      background-color: var(--button-bg);
+      /* color: #fff; */
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      /* border-radius: 6px; */
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: var(--button-hover);
+    }
+
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- Editor 1 -->
+  <main>
+    <div class="editor">
+      <textarea id="codeInput1" placeholder="Write your HTML code here...">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+</head>
+<body>
+  <h1>This is a Heading</h1>
+  <p>This is a paragraph.</p>
+</body>
+</html>
+      </textarea>
+      <button onclick="runCode1()">Run Code ▶</button>
+    </div>
+    <div class="output">
+      <iframe id="outputFrame1" style="display: none;"></iframe>
+    </div>
+  </main>
+
+  <!-- Editor 2 -->
+  <main>
+    <div class="editor">
+      <textarea id="codeInput2" placeholder="Write your HTML code here...">
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>The Window Object</h1>
+  <h2>The alert() Method</h2>
+  <p>Click the button to display an alert box.</p>
+  <button onclick="myFunction()">Try it</button>
+  <script>
+    function myFunction() {
+      alert("Hello! I am an alert box!");
+    }
+  </script>
+</body>
+</html>
+      </textarea>
+      <button onclick="runCode2()">Run Code ▶</button>
+    </div>
+    <div class="output">
+      <iframe id="outputFrame2" style="display: none;"></iframe>
+    </div>
+  </main>
+
+  <!-- Editor 3 -->
+  <main>
+    <div class="editor">
+      <textarea id="codeInput3" placeholder="Write your HTML code here...">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>HTML Iframes</h2>
+<p>You can use the height and width attributes to specify the size of the iframe:</p>
+
+<iframe src="https://example.com" height="200" width="300" title="Iframe Example"></iframe>
+
+<button onclick="myFunction()">Click Me</button>
+<script>
+  function myFunction() {
+    alert("HTML Iframes are fun!");
+  }
+</script>
+
+</body>
+</html>
+      </textarea>
+      <button onclick="runCode3()">Run Code ▶</button>
+    </div>
+    <div class="output">
+      <iframe id="outputFrame3" style="display: none;"></iframe>
+    </div>
+  </main>
+
+  <script>
+    function runCode1() {
+      const code = document.getElementById("codeInput1").value;
+      const outputFrame = document.getElementById("outputFrame1");
+      outputFrame.style.display = "block";
+      outputFrame.srcdoc = code;
+    }
+
+    function runCode2() {
+      const code = document.getElementById("codeInput2").value;
+      const outputFrame = document.getElementById("outputFrame2");
+      outputFrame.style.display = "block";
+      outputFrame.srcdoc = code;
+    }
+
+    function runCode3() {
+      const code = document.getElementById("codeInput3").value;
+      const outputFrame = document.getElementById("outputFrame3");
+      outputFrame.style.display = "block";
+      outputFrame.srcdoc = code;
+    }
+
+    // Optional: Ctrl + Enter to run code
+    document.querySelectorAll('textarea').forEach((ta, index) => {
+      ta.addEventListener("keydown", function(e) {
+        if (e.ctrlKey && e.key === "Enter") {
+          window[`runCode${index + 1}`]?.();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
