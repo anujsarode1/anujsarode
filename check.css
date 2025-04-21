@@ -335,13 +335,6 @@ body {
     padding: 30px;
 }
 
-/* .skill-category { */
-/* padding: 30px; */
-/* background: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
-/* } */
 
 .category-title {
     font-size: 1.5em;
@@ -352,10 +345,14 @@ body {
 }
 
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+display: flex;
+flex-wrap: wrap; /* Allows items to wrap to the next line */
+gap: 30px;
 }
+.skills-grid > * {
+flex: 0 0 250px; 
+}
+
 
 .skill-card {
     background: #fff;
