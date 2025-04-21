@@ -11,7 +11,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     z-index: 10;
     padding: 16px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -25,7 +25,7 @@ header .container {
 
 header nav a {
     font-weight: 500;
-    color: #333;
+    color: white;
     text-decoration: none;
     margin: 0 15px;
     transition: color 0.3s ease;
@@ -205,7 +205,7 @@ p {
 
 @media screen and (max-width: 768px) {
     .text-center {
-        padding: 40px 20px;
+        /* padding: 40px 20px; */
         margin: 50px 20px;
     }
 
