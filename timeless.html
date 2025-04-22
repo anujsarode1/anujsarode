@@ -7,624 +7,255 @@
     <link rel="stylesheet" href="check.css">
 
     <style>
-        body{
-            background-color: white;
-            color: black;
-        }
-        *,
-        ::before,
-        ::after {
-            --tw-border-spacing-x: 0;
-            --tw-border-spacing-y: 0;
-            --tw-translate-x: 0;
-            --tw-translate-y: 0;
-            --tw-rotate: 0;
-            --tw-skew-x: 0;
-            --tw-skew-y: 0;
-            --tw-scale-x: 1;
-            --tw-scale-y: 1;
-            --tw-pan-x: ;
-            --tw-pan-y: ;
-            --tw-pinch-zoom: ;
-            --tw-scroll-snap-strictness: proximity;
-            --tw-gradient-from-position: ;
-            --tw-gradient-via-position: ;
-            --tw-gradient-to-position: ;
-            --tw-ordinal: ;
-            --tw-slashed-zero: ;
-            --tw-numeric-figure: ;
-            --tw-numeric-spacing: ;
-            --tw-numeric-fraction: ;
-            --tw-ring-inset: ;
-            --tw-ring-offset-width: 0px;
-            --tw-ring-offset-color: #fff;
-            --tw-ring-color: rgb(59 130 246 / 0.5);
-            --tw-ring-offset-shadow: 0 0 #0000;
-            --tw-ring-shadow: 0 0 #0000;
-            --tw-shadow: 0 0 #0000;
-            --tw-shadow-colored: 0 0 #0000;
-            --tw-blur: ;
-            --tw-brightness: ;
-            --tw-contrast: ;
-            --tw-grayscale: ;
-            --tw-hue-rotate: ;
-            --tw-invert: ;
-            --tw-saturate: ;
-            --tw-sepia: ;
-            --tw-drop-shadow: ;
-            --tw-backdrop-blur: ;
-            --tw-backdrop-brightness: ;
-            --tw-backdrop-contrast: ;
-            --tw-backdrop-grayscale: ;
-            --tw-backdrop-hue-rotate: ;
-            --tw-backdrop-invert: ;
-            --tw-backdrop-opacity: ;
-            --tw-backdrop-saturate: ;
-            --tw-backdrop-sepia: ;
-            --tw-contain-size: ;
-            --tw-contain-layout: ;
-            --tw-contain-paint: ;
-            --tw-contain-style:
-        }
-
-        ::backdrop {
-            --tw-border-spacing-x: 0;
-            --tw-border-spacing-y: 0;
-            --tw-translate-x: 0;
-            --tw-translate-y: 0;
-            --tw-rotate: 0;
-            --tw-skew-x: 0;
-            --tw-skew-y: 0;
-            --tw-scale-x: 1;
-            --tw-scale-y: 1;
-            --tw-pan-x: ;
-            --tw-pan-y: ;
-            --tw-pinch-zoom: ;
-            --tw-scroll-snap-strictness: proximity;
-            --tw-gradient-from-position: ;
-            --tw-gradient-via-position: ;
-            --tw-gradient-to-position: ;
-            --tw-ordinal: ;
-            --tw-slashed-zero: ;
-            --tw-numeric-figure: ;
-            --tw-numeric-spacing: ;
-            --tw-numeric-fraction: ;
-            --tw-ring-inset: ;
-            --tw-ring-offset-width: 0px;
-            --tw-ring-offset-color: #fff;
-            --tw-ring-color: rgb(59 130 246 / 0.5);
-            --tw-ring-offset-shadow: 0 0 #0000;
-            --tw-ring-shadow: 0 0 #0000;
-            --tw-shadow: 0 0 #0000;
-            --tw-shadow-colored: 0 0 #0000;
-            --tw-blur: ;
-            --tw-brightness: ;
-            --tw-contrast: ;
-            --tw-grayscale: ;
-            --tw-hue-rotate: ;
-            --tw-invert: ;
-            --tw-saturate: ;
-            --tw-sepia: ;
-            --tw-drop-shadow: ;
-            --tw-backdrop-blur: ;
-            --tw-backdrop-brightness: ;
-            --tw-backdrop-contrast: ;
-            --tw-backdrop-grayscale: ;
-            --tw-backdrop-hue-rotate: ;
-            --tw-backdrop-invert: ;
-            --tw-backdrop-opacity: ;
-            --tw-backdrop-saturate: ;
-            --tw-backdrop-sepia: ;
-            --tw-contain-size: ;
-            --tw-contain-layout: ;
-            --tw-contain-paint: ;
-            --tw-contain-style:
-        }
-
-        /* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */
-        *,
-        ::after,
-        ::before {
-            box-sizing: border-box;
-            border-width: 0;
-            border-style: solid;
-            border-color: #e5e7eb
-        }
-
-        ::after,
-        ::before {
-            --tw-content: ''
-        }
-
-        :host,
-        html {
-            line-height: 1.5;
-            -webkit-text-size-adjust: 100%;
-            -moz-tab-size: 4;
-            tab-size: 4;
-            font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-feature-settings: normal;
-            font-variation-settings: normal;
-            -webkit-tap-highlight-color: transparent
-        }
-
-        body {
-            margin: 0;
-            line-height: inherit
-        }
-
-        hr {
-            height: 0;
-            color: inherit;
-            border-top-width: 1px
-        }
-
-        abbr:where([title]) {
-            -webkit-text-decoration: underline dotted;
-            text-decoration: underline dotted
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-size: inherit;
-            font-weight: inherit
-        }
-
-        a {
-            color: inherit;
-            text-decoration: inherit
-        }
-
-        b,
-        strong {
-            font-weight: bolder
-        }
-
-        code,
-        kbd,
-        pre,
-        samp {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            font-feature-settings: normal;
-            font-variation-settings: normal;
-            font-size: 1em
-        }
-
-        small {
-            font-size: 80%
-        }
-
-        sub,
-        sup {
-            font-size: 75%;
-            line-height: 0;
-            position: relative;
-            vertical-align: baseline
-        }
-
-        sub {
-            bottom: -.25em
-        }
-
-        sup {
-            top: -.5em
-        }
-
-        table {
-            text-indent: 0;
-            border-color: inherit;
-            border-collapse: collapse
-        }
-
-        button,
-        input,
-        optgroup,
-        select,
-        textarea {
-            font-family: inherit;
-            font-feature-settings: inherit;
-            font-variation-settings: inherit;
-            font-size: 100%;
-            font-weight: inherit;
-            line-height: inherit;
-            letter-spacing: inherit;
-            color: inherit;
-            margin: 0;
-            padding: 0
-        }
-
-        button,
-        select {
-            text-transform: none
-        }
-
-        button,
-        input:where([type=button]),
-        input:where([type=reset]),
-        input:where([type=submit]) {
-            -webkit-appearance: button;
-            background-color: transparent;
-            background-image: none
-        }
-
-        :-moz-focusring {
-            outline: auto
-        }
-
-        :-moz-ui-invalid {
-            box-shadow: none
-        }
-
-        progress {
-            vertical-align: baseline
-        }
-
-        ::-webkit-inner-spin-button,
-        ::-webkit-outer-spin-button {
-            height: auto
-        }
-
-        [type=search] {
-            -webkit-appearance: textfield;
-            outline-offset: -2px
-        }
-
-        ::-webkit-search-decoration {
-            -webkit-appearance: none
-        }
-
-        ::-webkit-file-upload-button {
-            -webkit-appearance: button;
-            font: inherit
-        }
-
-        summary {
-            display: list-item
-        }
-
-        blockquote,
-        dd,
-        dl,
-        figure,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        hr,
-        p,
-        pre {
-            margin: 0
-        }
-
-        fieldset {
-            margin: 0;
-            padding: 0
-        }
-
-        legend {
-            padding: 0
-        }
-
-        menu,
-        ol,
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0
-        }
-
-        dialog {
-            padding: 0
-        }
-
-        textarea {
-            resize: vertical
-        }
-
-        input::placeholder,
-        textarea::placeholder {
-            opacity: 1;
-            color: #9ca3af
-        }
-
-        [role=button],
-        button {
-            cursor: pointer
-        }
-
-        :disabled {
-            cursor: default
-        }
-
-        audio,
-        canvas,
-        embed,
-        iframe,
-        img,
-        object,
-        svg,
-        video {
-            display: block;
-            vertical-align: middle
-        }
-
-        img,
-        video {
-            max-width: 100%;
-            height: auto
-        }
-
-        [hidden]:where(:not([hidden=until-found])) {
-            display: none
-        }
-
-        .container {
-            width: 100%
-        }
-
-        @media (min-width: 640px) {
-            .container {
-                max-width: 640px
-            }
-        }
-
-        @media (min-width: 768px) {
-            .container {
-                max-width: 768px
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container {
-                max-width: 1024px
-            }
-        }
-
-        @media (min-width: 1280px) {
-            .container {
-                max-width: 1280px
-            }
-        }
-
-        @media (min-width: 1536px) {
-            .container {
-                max-width: 1536px
-            }
-        }
-
-        .order-1 {
-            order: 1
-        }
-
-        .order-2 {
-            order: 2
-        }
-
-        .mx-auto {
-            margin-left: auto;
-            margin-right: auto
-        }
-
-        .mb-2 {
-            margin-bottom: 0.5rem
-        }
-
-        .mb-4 {
-            margin-bottom: 1rem
-        }
-
-        .mb-6 {
-            margin-bottom: 1.5rem
-        }
-
-        .mb-8 {
-            margin-bottom: 2rem
-        }
-
-        .mt-12 {
-            margin-top: 3rem
-        }
-
-        .mt-16 {
-            margin-top: 4rem
-        }
-
-        .mt-24 {
-            margin-top: 6rem
-        }
-
-        .flex {
-            display: flex
-        }
-
-        .grid {
-            display: grid
-        }
-
-        .w-full {
-            width: 100%
-        }
-
-        .max-w-3xl {
-            max-width: 48rem
-        }
-
-        .max-w-6xl {
-            max-width: 72rem
-        }
-
-        .grid-cols-1 {
-            grid-template-columns: repeat(1, minmax(0, 1fr))
-        }
-
-        .flex-col {
-            flex-direction: column
-        }
-
-        .items-center {
-            align-items: center
-        }
-
-        .gap-10 {
-            gap: 2.5rem
-        }
-
-        .gap-6 {
-            gap: 1.5rem
-        }
-
-        .space-x-6> :not([hidden])~ :not([hidden]) {
-            --tw-space-x-reverse: 0;
-            margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-            margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))
-        }
-
-        .space-y-20> :not([hidden])~ :not([hidden]) {
-            --tw-space-y-reverse: 0;
-            margin-top: calc(5rem * calc(1 - var(--tw-space-y-reverse)));
-            margin-bottom: calc(5rem * var(--tw-space-y-reverse))
-        }
-
-        .rounded-lg {
-            border-radius: 0.5rem
-        }
-
-        .border-b-2 {
-            border-bottom-width: 2px
-        }
-
-        .border-white {
-            --tw-border-opacity: 1;
-            border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
-        }
-
-        .bg-black {
-            --tw-bg-opacity: 1;
-            background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1))
-        }
-
-        .bg-white {
-            --tw-bg-opacity: 1;
-            background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
-        }
-
-        .p-6 {
-            padding: 1.5rem
-        }
-
-        .px-4 {
-            padding-left: 1rem;
-            padding-right: 1rem
-        }
-
-        .py-10 {
-            padding-top: 2.5rem;
-            padding-bottom: 2.5rem
-        }
-
-        .text-center {
-            text-align: center
-        }
-
-        .font-serif {
-            font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif
-        }
-
-        .text-2xl {
-            font-size: 1.5rem;
-            line-height: 2rem
-        }
-
-        .text-4xl {
-            font-size: 2.25rem;
-            line-height: 2.5rem
-        }
-
-        .text-lg {
-            font-size: 1.125rem;
-            line-height: 1.75rem
-        }
-
-        .text-xl {
-            font-size: 1.25rem;
-            line-height: 1.75rem
-        }
-
-        .font-bold {
-            font-weight: 700
-        }
-
-        .text-gray-600 {
-            --tw-text-opacity: 1;
-            color: rgb(75 85 99 / var(--tw-text-opacity, 1))
-        }
-
-        .text-white {
-            --tw-text-opacity: 1;
-            color: rgb(255 255 255 / var(--tw-text-opacity, 1))
-        }
-
-        .shadow-lg {
-            --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
-        }
-
-        .hover\:text-gray-300:hover {
-            --tw-text-opacity: 1;
-            color: rgb(209 213 219 / var(--tw-text-opacity, 1))
-        }
-
-        @media (min-width: 640px) {
-            .sm\:grid-cols-2 {
-                grid-template-columns: repeat(2, minmax(0, 1fr))
-            }
-
-            .sm\:grid-cols-3 {
-                grid-template-columns: repeat(3, minmax(0, 1fr))
-            }
-
-            .sm\:px-6 {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem
-            }
-        }
-
-        @media (min-width: 768px) {
-            .md\:order-1 {
-                order: 1
-            }
-
-            .md\:order-2 {
-                order: 2
-            }
-
-            .md\:grid-cols-2 {
-                grid-template-columns: repeat(2, minmax(0, 1fr))
-            }
-
-            .md\:px-8 {
-                padding-left: 2rem;
-                padding-right: 2rem
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .lg\:grid-cols-3 {
-                grid-template-columns: repeat(3, minmax(0, 1fr))
-            }
-
-            .lg\:px-16 {
-                padding-left: 4rem;
-                padding-right: 4rem
-            }
-        }
+       body {
+    background-color: white;
+    color: black;
+    margin: 0;
+    line-height: inherit;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+b, strong {
+    font-weight: bolder;
+}
+
+code, kbd, pre, samp {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+table {
+    border-color: inherit;
+    border-collapse: collapse;
+}
+
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+button, select {
+    text-transform: none;
+}
+
+[role=button], button {
+    cursor: pointer;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+[hidden] {
+    display: none;
+}
+
+/* .container {
+    width: 100%;
+} */
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.mt-12 {
+    margin-top: 3rem;
+}
+
+.mt-16 {
+    margin-top: 4rem;
+}
+
+.mt-24 {
+    margin-top: 6rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.max-w-3xl {
+    max-width: 48rem;
+}
+
+.max-w-6xl {
+    max-width: 72rem;
+}
+
+.grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.items-center {
+    align-items: center;
+}
+
+.gap-6 {
+    gap: 1.5rem;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.border-b-2 {
+    border-bottom-width: 2px;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.font-serif {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-gray-600 {
+    color: rgb(75, 85, 99);
+}
+
+.text-white {
+    color: white;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.hover\:text-gray-300:hover {
+    color: rgb(209, 213, 219);
+}
+
+@media (min-width: 640px) {
+    .sm\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 768px) {
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
     </style>
 </head>
 
@@ -639,9 +270,9 @@
                 <!-- <a href="#Contact">Contact</a> -->
             </nav>
             <div class="social-icons">
-                <!-- <a href="https://twitter.com" class="twitter">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/800px-X_logo_2023.svg.png"
-                        alt="Twitter"> -->
+                <a href="https://twitter.com" class="twitter">
+                    <img src="x corp.avif"
+                        alt="Twitter">
                 </a>
                 <a href="https://github.com" class="github">
                     <img src="https://img.icons8.com/fluent-systems-filled/200/FFFFFF/github.png"
@@ -671,7 +302,7 @@
         </h1>
         <p class="text-lg max-w-3xl mx-auto mb-8">
             I'm a Full Stack Developer with expertise in building web applications using HTML, CSS, JavaScript, and
-            various backend technologies. Passionate about creating interactive and efficient user experiences, I thrive
+            various Scripting & backend technologies. Passionate about creating interactive and efficient user experiences, I thrive
             on solving complex problems and continually expanding my skill set to enhance performance and scalability.
             My focus is on delivering high-quality, scalable, and maintainable code.
         </p>
@@ -749,7 +380,7 @@
     <!-- live -->
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <div class="bg-white text-black font-serif">
+    <div class="bg-white text-black ">
         <div class="max-w-6xl mx-auto py-10 px-4 space-y-20">
 
             <h2 class="text-4xl font-bold mb-8 text-center">
@@ -804,50 +435,270 @@
     </div>
 
     <!-- projects -->
-    <section id="Projects" class="mt-16 custom-padding w-full max-w-6xl">
-        <h2 class="text-4xl font-bold mb-4 text-center">
-            Projects
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <a href="htmlone.html">
-                    <img alt="Project 1 screenshot" class="rounded-lg mb-4" height="200"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/640px-HTML5_logo_and_wordmark.svg.png"
-                        width="300">
-                </a>
-                <h3 class="text-2xl font-bold mb-2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #3a86ff;
+      --secondary: #8338ec;
+      --dark: #1a1a2e;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+      --html: #e34c26;
+      --css: #264de4;
+      --js: #f0db4f;
+      --sql: #00758f;
+      --qa: #6b4fbb;
+    }
 
-                </h3>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <a href="htmltwo.html">
-                    <img alt="Project 2 screenshot" class="rounded-lg mb-4" height="200"
-                        src="https://blog.leonhassan.co.uk/content/images/2019/09/css3.svg" width="300">
-                </a>
-                <h3 class="text-2xl font-bold mb-2">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-                </h3>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <a href="htmlthree.html">
-                    <img alt="Project 3 screenshot" class="rounded-lg mb-4" height="200"
-                        src="https://ayltoninacio.com.br/img/p/180w1500.jpg" width="300">
-                </a>
-                <h3 class="text-2xl font-bold mb-2">
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+    }
 
-                </h3>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <a href="https://chic-crepe-d6754a.netlify.app/">
-                    <img alt="Project 4 screenshot" class="rounded-lg mb-4" height="200"
-                        src="https://miro.medium.com/v2/resize:fit:1400/0*y6IcBe5J1AdALzXw.png" width="300">
-                </a>
-                <h3 class="text-2xl font-bold mb-2">
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
 
-                </h3>
-            </div>
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background: var(--primary);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .projects-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .project-nav-item {
+      padding: 10px 20px;
+      /* border-radius: 30px; */
+      background: #f0f0f0;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .project-nav-item:hover {
+      background-color: #e0e0e0;
+    }
+
+    .project-nav-item.active {
+      color: white;
+    }
+
+    .project-nav-item.html.active { background-color: var(--html); }
+    .project-nav-item.css.active { background-color: var(--css); }
+    .project-nav-item.js.active { background-color: var(--js); }
+    .project-nav-item.sql.active { background-color: var(--sql); }
+    .project-nav-item.qa.active { background-color: var(--qa); }
+
+    .project-category {
+      display: none;
+    }
+
+    .project-category.active {
+      display: block;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-img img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-img img {
+      transform: scale(1.05);
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .project-links a {
+      color: var(--primary);
+      transition: color 0.3s ease;
+    }
+
+    .project-links a:hover {
+      color: var(--secondary);
+    }
+
+    /* footer */
+.footer {
+  /* position: fixed; */
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-links a {
+  text-decoration: underline;
+  font-weight: bold;
+  color: #000;
+  margin: 0 5px;
+}
+
+.footer-links a:hover {
+  color: #555;
+}
+/* icon */
+
+  </style>
+</head>
+<body>
+
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-title">
+        <h2>✨ My Projects</h2>
+      </div>
+
+      <div class="projects-nav">
+        <div class="project-nav-item html active" data-category="html">HTML</div>
+        <div class="project-nav-item css" data-category="css">CSS</div>
+        <div class="project-nav-item js" data-category="js">JS</div>
+        <div class="project-nav-item sql" data-category="sql">React</div>
+        <div class="project-nav-item qa" data-category="qa">More Dropdown</div>
+        <!-- <div class="project-nav-item css" data-category="assignments">Assignments</div> -->
+      </div>
+
+      <!-- Project Tabs -->
+      <div id="html" class="project-category active">
+        <h3>HTML Projects</h3>
+        <div class="projects-grid">
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=HTML+1" /></div><div class="project-content"><h3>HTML Landing</h3></div></div>
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=HTML+2" /></div><div class="project-content"><h3>Contact Page</h3></div></div>
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=HTML+3" /></div><div class="project-content"><h3>Bio Page</h3></div></div>
         </div>
-    </section>
+      </div>
+
+      <div id="css" class="project-category">
+        <h3>CSS Projects</h3>
+        <div class="projects-grid">
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=CSS+1" /></div><div class="project-content"><h3>Responsive Grid</h3><p>CSS grid layout demo.</p><div class="project-links"><a href="#">Code</a><a href="#">Demo</a></div></div></div>
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=CSS+2" /></div><div class="project-content"><h3>Animated Button</h3><p>CSS animations in buttons.</p><div class="project-links"><a href="#">Code</a><a href="#">Demo</a></div></div></div>
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=CSS+3" /></div><div class="project-content"><h3>Dark Mode UI</h3><p>Toggle dark mode using CSS.</p><div class="project-links"><a href="#">Code</a><a href="#">Demo</a></div></div></div>
+        </div>
+      </div>
+
+      <div id="js" class="project-category">
+        <h3>JavaScript Projects</h3>
+        <div class="projects-grid">
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=JS+1" /></div><div class="project-content"><h3>Todo App</h3><p>Basic to-do with localStorage.</p><div class="project-links"><a href="#">Code</a><a href="#">Demo</a></div></div></div>
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=JS+2" /></div><div class="project-content"><h3>Counter</h3><p>Increment/decrement counter app.</p><div class="project-links"><a href="#">Code</a><a href="#">Demo</a></div></div></div>
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=JS+3" /></div><div class="project-content"><h3>Weather App</h3><p>Uses API to show weather.</p><div class="project-links"><a href="#">Code</a><a href="#">Demo</a></div></div></div>
+        </div>
+      </div>
+
+      <div id="sql" class="project-category">
+        <h3>React JS Projects</h3>
+        <div class="projects-grid">
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=React+1" /></div><div class="project-content"><h3>React Portfolio</h3><p>Single-page portfolio app.</p><div class="project-links"><a href="#">Code</a><a href="#">Demo</a></div></div></div>
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=React+2" /></div><div class="project-content"><h3>Task Tracker</h3><p>Track tasks with hooks.</p><div class="project-links"><a href="#">Code</a><a href="#">Demo</a></div></div></div>
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=React+3" /></div><div class="project-content"><h3>Blog App</h3><p>Blog with routing & fetch.</p><div class="project-links"><a href="#">Code</a><a href="#">Demo</a></div></div></div>
+        </div>
+      </div>
+
+      <div id="qa" class="project-category">
+        <h3>Live Projects</h3>
+        <div class="projects-grid">
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=Live+1" /></div><div class="project-content"><h3>Live Shop</h3></div></div>
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=Live+2" /></div><div class="project-content"><h3>Live Resume</h3></div></div>
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=Live+3" /></div><div class="project-content"><h3>Live Blog</h3></div></div>
+        </div>
+      </div>
+
+      <!-- <div id="assignments" class="project-category">
+        <h3>Assignments</h3>
+        <div class="projects-grid">
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=Assignment+1" /></div><div class="project-content"><h3>HTML Form</h3><p>College assignment form.</p><div class="project-links"><a href="#">Code</a><a href="#">Demo</a></div></div></div>
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=Assignment+2" /></div><div class="project-content"><h3>Table Layout</h3><p>Basic table formatting.</p><div class="project-links"><a href="#">Code</a><a href="#">Demo</a></div></div></div>
+          <div class="project-card"><div class="project-img"><img src="https://via.placeholder.com/400x200?text=Assignment+3" /></div><div class="project-content"><h3>Lists & Media</h3><p>Lists and images assignment.</p><div class="project-links"><a href="#">Code</a><a href="#">Demo</a></div></div></div>
+        </div>
+      </div> -->
+
+    </div>
+  </section>
+
+  <script>
+    const navItems = document.querySelectorAll(".project-nav-item");
+    const categories = document.querySelectorAll(".project-category");
+
+    navItems.forEach(item => {
+      item.addEventListener("click", () => {
+        navItems.forEach(i => i.classList.remove("active"));
+        categories.forEach(cat => cat.classList.remove("active"));
+
+        item.classList.add("active");
+        const selected = item.getAttribute("data-category");
+        const target = document.getElementById(selected);
+        if (target) {
+          target.classList.add("active");
+        }
+      });
+    });
+  </script>
 
 
 
@@ -898,7 +749,7 @@
                         Our data analytics services help you make informed business decisions based on data insights.
                     </p>
                 </div>
-                <!-- <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
                     <i class="fas fa-cloud text-4xl text-black-500 mb-4">
                     </i>
                     <h3 class="text-xl font-bold mb-2">
@@ -918,31 +769,21 @@
                         Our cybersecurity services protect your digital assets from threats and vulnerabilities.
                     </p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                    <i class="fas fa-shield-alt text-4xl text-black-500 mb-4">
-                    </i>
-                    <h3 class="text-xl font-bold mb-2">
-                        Cybersecurity
-                    </h3>
-                    <p class="text-gray-600">
-                        Our cybersecurity services protect your digital assets from threats and vulnerabilities.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                    <i class="fas fa-shield-alt text-4xl text-black-500 mb-4">
-                    </i>
-                    <h3 class="text-xl font-bold mb-2">
-                        Cybersecurity
-                    </h3>
-                    <p class="text-gray-600">
-                        Our cybersecurity services protect your digital assets from threats and vulnerabilities.
-                    </p>
-                </div> -->
             </div>
         </section>
     </div>
 
-
+ <!-- footer -->
+ <footer class="footer">
+    <div class="footer-links">
+      <a href="#">Twitter</a> |
+      <a href="#">LinkedIn</a> |
+      <a href="#">Github</a> |
+      <a href="#">About</a> |
+      <a href="#">Contact Me</a>
+    </div>
+  </footer>
+  <br>
 </body>
 
 </html>
