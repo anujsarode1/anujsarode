@@ -7,6 +7,26 @@
     <link rel="stylesheet" href="check.css">
 
     <style>
+        @media screen and (max-width: 370px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+  
+      .logo img {
+        width: 100px;  /* Reasonable mobile logo size */
+      }
+  
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+  
+      nav ul li a {
+        font-size: 14px;
+      }
+    }
        body {
     background-color: white;
     color: black;
@@ -267,7 +287,7 @@ img, video {
                 <a href="#About">About</a>
                 <a href="#Projects">Projects</a>
                 <a href="#Services">Services</a>
-                <a href="#Contact">Contact</a>
+                <!-- <a href="#Contact">Contact</a> -->
             </nav>
             <div class="social-icons">
                 <a href="https://twitter.com" class="twitter">
@@ -311,76 +331,78 @@ img, video {
         Skills
     </h2>
     <!-- skill -->
-    <div class="skills-container">
-        <div class="skill-category">
-            <h3 class="category-title">Frontend</h3>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="icon"></div>
-                    <h3 class="skill-name">HTML&amp;CSS</h3>
-                    <p class="skill-description">Web Markup and Styling</p>
-                </div>
-                <div class="skill-card">
-                    <div class="icon"></div>
-                    <h3 class="skill-name">JavaScript</h3>
-                    <p class="skill-description">Scripting Language</p>
-                </div>
-                <div class="skill-card">
-                    <div class="icon"></div>
-                    <h3 class="skill-name">Bootstrap</h3>
-                    <p class="skill-description">Frontend Framework</p>
-                </div>
-                <div class="skill-card">
-                    <div class="icon"></div>
-                    <h3 class="skill-name">React</h3>
-                    <p class="skill-description">Frontend Framework</p>
-                </div>
-            </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-gray-100 p-10">
+  
+    <section class="max-w-7xl mx-auto grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-7">
+      
+      <div class="w-[280px] h-[180px] bg-white text-black flex flex-col rounded-xl shadow-lg overflow-hidden transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl">
+        <div class="bg-black text-white text-center text-lg tracking-wider uppercase p-2">Frontend</div>
+        <div class="flex flex-1 flex-col justify-center items-center p-3 text-center">
+          <h2 class="text-[22px] uppercase tracking-wide m-0">HTML & CSS</h2>
+          <p class="mt-1 text-sm tracking-wide">Web Markup and Styling</p>
         </div>
-    </div>
-    <!-- 2 -->
-    <div class="skills-container">
-        <div class="skill-category">
-            <h3 class="category-title">Backend</h3>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="icon"></div>
-                    <h3 class="skill-name">Node.js</h3>
-                    <p class="skill-description">Backend Runtime</p>
-                </div>
-            </div>
+      </div>
+  
+      <div class="w-[280px] h-[180px] bg-white text-black flex flex-col rounded-xl shadow-lg overflow-hidden transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl">
+        <div class="bg-black text-white text-center text-lg tracking-wider uppercase p-2">Logic</div>
+        <div class="flex flex-1 flex-col justify-center items-center p-3 text-center">
+          <h2 class="text-[22px] uppercase tracking-wide m-0">JavaScript</h2>
+          <p class="mt-1 text-sm tracking-wide">Scripting Language</p>
         </div>
-    </div>
-    <!-- 3 -->
-    <div class="skills-container">
-        <div class="skill-category">
-            <h3 class="category-title">DevOps</h3>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="icon"></div>
-                    <h3 class="skill-name">Netlify</h3>
-                    <p class="skill-description">Frontend Deployment Platform</p>
-                </div>
-            </div>
+      </div>
+  
+      <div class="w-[280px] h-[180px] bg-white text-black flex flex-col rounded-xl shadow-lg overflow-hidden transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl">
+        <div class="bg-black text-white text-center text-lg tracking-wider uppercase p-2">Framework</div>
+        <div class="flex flex-1 flex-col justify-center items-center p-3 text-center">
+          <h2 class="text-[22px] uppercase tracking-wide m-0">Bootstrap</h2>
+          <p class="mt-1 text-sm tracking-wide">Frontend Framework</p>
         </div>
-    </div>
-    <!-- 4 -->
-    <div class="skills-container">
-        <div class="skill-category">
-            <h3 class="category-title">Databases</h3>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="icon"></div>
-                    <h3 class="skill-name">PostgreSQL</h3>
-                    <p class="skill-description">Relational Database</p>
-                </div>
-            </div>
+      </div>
+  
+      <div class="w-[280px] h-[180px] bg-white text-black flex flex-col rounded-xl shadow-lg overflow-hidden transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl">
+        <div class="bg-black text-white text-center text-lg tracking-wider uppercase p-2">Frontend</div>
+        <div class="flex flex-1 flex-col justify-center items-center p-3 text-center">
+          <h2 class="text-[22px] uppercase tracking-wide m-0">React</h2>
+          <p class="mt-1 text-sm tracking-wide">Frontend Framework</p>
         </div>
-    </div>
+      </div>
+  
+      <div class="w-[280px] h-[180px] bg-white text-black flex flex-col rounded-xl shadow-lg overflow-hidden transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl">
+        <div class="bg-black text-white text-center text-lg tracking-wider uppercase p-2">Backend</div>
+        <div class="flex flex-1 flex-col justify-center items-center p-3 text-center">
+          <h2 class="text-[22px] uppercase tracking-wide m-0">Node.js</h2>
+          <p class="mt-1 text-sm tracking-wide">Backend Runtime</p>
+        </div>
+      </div>
+  
+      <div class="w-[280px] h-[180px] bg-white text-black flex flex-col rounded-xl shadow-lg overflow-hidden transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl">
+        <div class="bg-black text-white text-center text-lg tracking-wider uppercase p-2">DevOps</div>
+        <div class="flex flex-1 flex-col justify-center items-center p-3 text-center">
+          <h2 class="text-[22px] uppercase tracking-wide m-0">Netlify</h2>
+          <p class="mt-1 text-sm tracking-wide">Deployment Platform</p>
+        </div>
+      </div>
+  
+      <div class="w-[280px] h-[180px] bg-white text-black flex flex-col rounded-xl shadow-lg overflow-hidden transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl">
+        <div class="bg-black text-white text-center text-lg tracking-wider uppercase p-2">Databases</div>
+        <div class="flex flex-1 flex-col justify-center items-center p-3 text-center">
+          <h2 class="text-[22px] uppercase tracking-wide m-0">PostgreSQL</h2>
+          <p class="mt-1 text-sm tracking-wide">Database</p>
+        </div>
+      </div>
+  
+    </section>
+  
+  </body>
+
+  <br>
     <!-- live -->
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <div class="bg-white text-black ">
+    <div id="Projects" class="bg-white text-black ">
         <div class="max-w-6xl mx-auto py-10 px-4 space-y-20">
 
             <h2 class="text-4xl font-bold mb-8 text-center">
@@ -468,9 +490,9 @@ img, video {
       padding: 0 20px;
     }
 
-    section {
+    /* section {
       padding: 80px 0;
-    }
+    } */
 
     .section-title {
       text-align: center;
@@ -583,25 +605,7 @@ img, video {
       color: var(--secondary);
     }
 
-    /* footer */
-.footer {
-  /* position: fixed; */
-  bottom: 20px;
-  width: 100%;
-  text-align: center;
-  font-family: 'Arial', sans-serif;
-}
-
-.footer-links a {
-  text-decoration: underline;
-  font-weight: bold;
-  color: #000;
-  margin: 0 5px;
-}
-
-.footer-links a:hover {
-  color: #555;
-}
+  
 /* icon */
 
   </style>
@@ -611,15 +615,92 @@ img, video {
   <section id="projects" class="projects">
     <div class="container">
       <div class="section-title">
-        <h2>✨ My Projects</h2>
+        <h2>Projects</h2>
       </div>
 
       <div class="projects-nav">
-        <div class="project-nav-item html active" data-category="html">HTML</div>
+        <!-- <div class="project-nav-item html active" data-category="html">HTML</div>
         <div class="project-nav-item css" data-category="css">CSS</div>
         <div class="project-nav-item js" data-category="js">JS</div>
-        <div class="project-nav-item sql" data-category="sql">React</div>
-        <div class="project-nav-item qa" data-category="qa">More Dropdown</div>
+        <div class="project-nav-item sql" data-category="sql">React</div> -->
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 99;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.show {
+  display: block;
+}
+
+    </style>
+</head>
+<body>
+    <div class="projects-nav">
+    <div class="project-nav-item html active" data-category="html">HTML</div>
+    <div class="project-nav-item css" data-category="css">CSS</div>
+    <div class="project-nav-item js" data-category="js">JavaScript</div>
+    <div class="project-nav-item sql" data-category="sql">React JS</div>
+  
+    <!-- More Dropdown -->
+    <div class="dropdown">
+      <div class="project-nav-item qa dropbtn" onclick="toggleDropdown()">More ▾</div>
+      <div id="dropdownContent" class="dropdown-content">
+        <a href="#assignments">Swift</a>
+        <a href="#live">Java</a>
+        <a href="#live">C</a>
+        <a href="#live">Python</a>
+        <a href="#certificates">Certificates</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggleDropdown() {
+  document.getElementById("dropdownContent").classList.toggle("show");
+}
+
+// Close dropdown if user clicks outside
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    let dropdowns = document.getElementsByClassName("dropdown-content");
+    for (let i = 0; i < dropdowns.length; i++) {
+      let openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+  </script>
+</body>
+</html>
         <!-- <div class="project-nav-item css" data-category="assignments">Assignments</div> -->
       </div>
 
@@ -703,8 +784,8 @@ img, video {
 
 
     <!-- service -->
-    <div class="hello">
-        <section id="Services" class="flex flex-col items-center mt-24 sm:px-6 md:px-8 lg:px-16">
+    <div id="Services" class="hello">
+        <section  class="flex flex-col items-center mt-24 sm:px-6 md:px-8 lg:px-16">
             <h2 class="text-4xl font-bold mb-4 text-center">
                 Services
             </h2>
@@ -774,16 +855,7 @@ img, video {
     </div>
 
  <!-- footer -->
- <footer class="footer">
-    <div class="footer-links">
-      <a href="#">Twitter</a> |
-      <a href="#">LinkedIn</a> |
-      <a href="#">Github</a> |
-      <a href="#">About</a> |
-      <a href="#">Contact Me</a>
-    </div>
-  </footer>
-  <br>
+
 </body>
 
 </html>

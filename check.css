@@ -27,13 +27,13 @@ header nav a {
     font-weight: 500;
     color: white;
     text-decoration: none;
-    margin: 0 8px;
+    margin: 0 5px;
     transition: color 0.3s ease;
 }
 
 header nav a:hover {
-    color: #007bff;
-    text-decoration: underline;
+    color: #919191;
+    /* text-decoration: underline; */
 }
 
 .social-icons {
@@ -306,7 +306,7 @@ a {
 
 .text-center {
     text-align: center;
-    padding: 10px;
+    padding: 30px;
 }
 
 .p-6 {
@@ -396,7 +396,7 @@ flex: 0 0 250px;
 }
 
 .hello {
-    padding: 30px;
+    /* padding: 30px; */
     grid-template-columns: repeat(3, 1fr);
 
 }
