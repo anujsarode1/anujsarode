@@ -22,6 +22,7 @@
       height: 100vh;
       text-align: center;
       position: relative;
+      overflow: hidden;
     }
 
     h1 {
@@ -86,7 +87,6 @@
       color: #f1c40f;
     }
 
-    /* Rules Button */
     #rulesBtn {
       position: fixed;
       top: 20px;
@@ -109,7 +109,6 @@
       transform: scale(1.05);
     }
 
-    /* Modal Styles */
     #rulesModal {
       display: none;
       position: fixed;
@@ -153,6 +152,14 @@
       background-color: #e67e22;
     }
 
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
     @media (max-width: 500px) {
       h1 {
         font-size: 2em;
@@ -172,7 +179,6 @@
 </head>
 <body>
 
-  <!-- Rules Button in top-right -->
   <button id="rulesBtn" onclick="showRules()">Rules</button>
 
   <h1>Rock Paper Scissors</h1>
@@ -190,7 +196,6 @@
 
   <h1 id="finalResult"></h1>
 
-  <!-- Modal for Rules -->
   <div id="rulesModal" onclick="closeRules(event)">
     <div id="rulesContent" onclick="event.stopPropagation();">
       <h2>Game Rules</h2>
@@ -200,6 +205,9 @@
       <button id="closeBtn" onclick="closeRules()">Close</button>
     </div>
   </div>
+
+  <!-- Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <script>
     function getComputerChoice() {
@@ -233,7 +241,35 @@
           Computer chose: <strong>${computerChoice}</strong><br>
           <div style="margin-top:20px; font-size: 1.2em;">${result}</div>
         `;
+
+        if (result === "You win!") {
+          launchConfetti();
+        }
       }, 1000);
+    }
+
+    function launchConfetti() {
+      const duration = 3 * 1000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 7,
+          angle: 60,
+          spread: 70,
+          origin: { x: 0 }
+        });
+        confetti({
+          particleCount: 7,
+          angle: 120,
+          spread: 70,
+          origin: { x: 1 }
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
     }
 
     function showRules() {
@@ -249,10 +285,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
