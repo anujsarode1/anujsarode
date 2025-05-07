@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .choices {
+      display: flex;
+      gap: 20px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      background-color: #fff;
+      color: #2c3e50;
+      border: none;
+      padding: 15px 25px;
+      font-size: 1.2em;
+      border-radius: 8px;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #fff200;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    #loader {
+      display: none;
+      margin-top: 30px;
+    }
+
+    .spinner {
+      border: 8px solid rgba(255, 255, 255, 0.3);
+      border-top: 8px solid #eeff00;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #finalResult {
+      display: none;
+      margin-top: 30px;
+      font-size: 2em;
+    }
+
+    strong {
+      color: #f1c40f;
+    }
+
+    /* Rules Button */
+    #rulesBtn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #fff;
+      color: #2c3e50;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1em;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 1001;
+      transition: 0.3s ease;
+    }
+
+    #rulesBtn:hover {
+      background-color: #fff200;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    /* Modal Styles */
+    #rulesModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    #rulesContent {
+      background-color: #fff;
+      color: #2c3e50;
+      padding: 40px 60px;
+      border-radius: 10px;
+      text-align: center;
+      width: 80%;
+      max-width: 600px;
+      font-size: 1.5em;
+    }
+
+    #rulesContent h2 {
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    #closeBtn {
+      background-color: #f1c40f;
+      color: #2c3e50;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-top: 20px;
+    }
+
+    #closeBtn:hover {
+      background-color: #e67e22;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      button {
+        font-size: 1em;
+        padding: 12px 20px;
+      }
+
+      #rulesContent {
+        font-size: 1.2em;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Rules Button in top-right -->
+  <button id="rulesBtn" onclick="showRules()">Rules</button>
+
+  <h1>Rock Paper Scissors</h1>
+
+  <div class="choices">
+    <button onclick="playGame('rock')">Rock</button>
+    <button onclick="playGame('paper')">Paper</button>
+    <button onclick="playGame('scissors')">Scissors</button>
+  </div>
+
+  <div id="loader">
+    <h2>Thinking...</h2>
+    <div class="spinner"></div>
+  </div>
+
+  <h1 id="finalResult"></h1>
+
+  <!-- Modal for Rules -->
+  <div id="rulesModal" onclick="closeRules(event)">
+    <div id="rulesContent" onclick="event.stopPropagation();">
+      <h2>Game Rules</h2>
+      <p><strong>Rock</strong> beats <strong>Scissors</strong></p>
+      <p><strong>Scissors</strong> beats <strong>Paper</strong></p>
+      <p><strong>Paper</strong> beats <strong>Rock</strong></p>
+      <button id="closeBtn" onclick="closeRules()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function getComputerChoice() {
+      const choices = ['rock', 'paper', 'scissors'];
+      const randomIndex = Math.floor(Math.random() * choices.length);
+      return choices[randomIndex];
+    }
+
+    function getResult(player, computer) {
+      if (player === computer) return "It's a draw!";
+      if (
+        (player === 'rock' && computer === 'scissors') ||
+        (player === 'paper' && computer === 'rock') ||
+        (player === 'scissors' && computer === 'paper')
+      ) return "You win!";
+      return "You lose!";
+    }
+
+    function playGame(playerChoice) {
+      document.getElementById('loader').style.display = 'block';
+      document.getElementById('finalResult').style.display = 'none';
+
+      setTimeout(() => {
+        const computerChoice = getComputerChoice();
+        const result = getResult(playerChoice, computerChoice);
+
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('finalResult').style.display = 'block';
+        document.getElementById('finalResult').innerHTML = `
+          You chose: <strong>${playerChoice}</strong><br>
+          Computer chose: <strong>${computerChoice}</strong><br>
+          <div style="margin-top:20px; font-size: 1.2em;">${result}</div>
+        `;
+      }, 1000);
+    }
+
+    function showRules() {
+      document.getElementById('rulesModal').style.display = 'flex';
+    }
+
+    function closeRules(event) {
+      if (!event || event.target === document.getElementById('rulesModal')) {
+        document.getElementById('rulesModal').style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
