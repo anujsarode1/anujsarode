@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Anuj</title>
+    <style>
+        :root {
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+            --bg: #fbfbfd;
+            --fg: #1d1d1f;
+            --mute: #6e6e73;
+            --line: #d2d2d7;
+            --accent: #0071e3;
+        }
+
+        @media (prefers-color-scheme:dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #000;
+                --fg: #f5f5f7;
+                --mute: #86868b;
+                --line: #2d2d30;
+                --accent: #2997ff
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #000;
+            --fg: #f5f5f7;
+            --mute: #86868b;
+            --line: #2d2d30;
+            --accent: #2997ff
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit
+        }
+
+        html {
+            scroll-padding-top: env(safe-area-inset-top, 0px);
+            scroll-behavior: smooth;
+            scroll-snap-type: y proximity
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--fg);
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased
+        }
+
+        section {
+            scroll-snap-align: start;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 12vh 24px;
+            max-width: 860px;
+            margin: 0 auto
+        }
+
+        h1 {
+            font-size: clamp(3rem, 11vw, 7.5rem);
+            font-weight: 600;
+            letter-spacing: -.04em;
+            line-height: 1;
+            margin: 0
+        }
+
+        h2 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 600;
+            letter-spacing: -.03em;
+            line-height: 1.05;
+            margin: 0 0 40px
+        }
+
+        .hero {
+            min-height: 100vh;
+            align-items: center;
+            text-align: center;
+            max-width: none
+        }
+
+        .hero h1 span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(.25em);
+            animation: rise .9s cubic-bezier(.2, .7, .2, 1) forwards
+        }
+
+        .hero p {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--mute);
+            margin: 24px 0 0;
+            max-width: 30ch;
+            opacity: 0;
+            animation: rise 1s 1.3s forwards
+        }
+
+        .hero .role-line {
+            font-size: 1rem;
+            margin-top: 12px;
+            animation-delay: 1.6s
+        }
+
+        @keyframes rise {
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        .slide {
+            min-height: 100vh;
+            align-items: center;
+            text-align: center;
+            max-width: none
+        }
+
+        .big {
+            font-size: clamp(3.5rem, 17vw, 12rem);
+            font-weight: 600;
+            letter-spacing: -.05em;
+            line-height: 1;
+            color: var(--line);
+            transition: color .7s ease
+        }
+
+        .slide.on .big {
+            color: var(--fg)
+        }
+
+        .slide .sub {
+            color: var(--mute);
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            margin: 20px auto 0;
+            max-width: 34ch
+        }
+
+        .item {
+            padding: 28px 0;
+            border-top: 1px solid var(--line)
+        }
+
+        .item h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -.02em;
+            margin: 0
+        }
+
+        .item .meta {
+            color: var(--mute);
+            margin: 4px 0 12px
+        }
+
+        .item p {
+            margin: 0 0 12px;
+            max-width: 60ch;
+            font-size: 1.1rem
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 1.2em;
+            max-width: 60ch;
+            font-size: 1.1rem
+        }
+
+        li {
+            margin: 6px 0
+        }
+
+        .cols {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0 40px
+        }
+
+        .tech {
+            color: var(--mute);
+            margin-top: 32px;
+            font-size: 1rem
+        }
+
+        .bring {
+            display: grid;
+            gap: 36px
+        }
+
+        .bring h3 {
+            font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+            font-weight: 600;
+            letter-spacing: -.03em;
+            line-height: 1.1;
+            margin: 0
+        }
+
+        .bring p {
+            margin: 6px 0 0;
+            color: var(--mute);
+            font-size: 1.2rem;
+            max-width: 44ch
+        }
+
+        .more {
+            min-height: 100vh;
+            align-items: center;
+            text-align: center;
+            max-width: none
+        }
+
+        .more button {
+            font: inherit;
+            font-size: clamp(2rem, 7vw, 4.5rem);
+            font-weight: 600;
+            letter-spacing: -.03em;
+            background: none;
+            border: 0;
+            color: var(--fg);
+            cursor: pointer;
+            padding: 12px 24px;
+            border-radius: 12px
+        }
+
+        .more button:hover {
+            color: var(--accent)
+        }
+
+        .more button:focus-visible,
+        a:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 4px
+        }
+
+        .reveal {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height .8s ease, opacity .8s ease;
+            font-size: 1.4rem
+        }
+
+        .reveal.open {
+            max-height: 300px;
+            opacity: 1;
+            margin-top: 32px
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        .note {
+            font-size: .9rem;
+            color: var(--mute);
+            margin-top: 12px
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+
+            .hero h1 span,
+            .hero p {
+                animation: none;
+                opacity: 1;
+                transform: none
+            }
+
+            .big,
+            .reveal {
+                transition: none
+            }
+
+            html {
+                scroll-behavior: auto
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <h1 id="name" aria-label="Anuj"></h1>
+        <p>“Technology that moves fast”</p>
+        <!-- <p class="role-line">Bussiness × technology</p> -->
+    </section>
+
+    <section class="slide">
+        <div class="big">Business</div>
+        <div class="sub">BBA with a focus on business, marketing and entrepreneurship.</div>
+    </section>
+    <section class="slide">
+        <div class="big">Technology</div>
+        <div class="sub">Hands-on frontend development with HTML, CSS, JavaScript, React.js and web technologies.</div>
+    </section>
+    <section class="slide">
+        <div class="big">Product</div>
+        <div class="sub">Built a ordering system connecting customers and the experience behind
+            every transaction..</div>
+    </section>
+    <!-- <section class="slide"><div class="big">Retail</div><div class="sub">Strong interest in the customer, the store, the product and the experience behind every transaction.</div></section> -->
+
+    <section>
+        <h2>Experience.</h2>
+        <div class="item">
+            <h3>Frontend Developer, EP</h3>
+            <p class="meta">2024–2026</p>
+            <p>Built responsive web experiences and gained practical experience turning requirements into working
+                software.</p>
+            <ul>
+                <li>Developed interfaces using HTML, CSS, JavaScript, React.js and Bootstrap.</li>
+                <li>Built and tested customer-facing web functionality.</li>
+                <li>Worked through real software development workflows.</li>
+                <li>Learned how frontend applications connect with external services and backend systems.</li>
+            </ul>
+        </div>
+        <!-- <div class="item">
+    <h3>Product Builder and Founder, Independent Product Projects</h3>
+    <p class="meta">Commerce, marketplaces and customer experience</p>
+    <ul>
+      <li>Defined customer problems and product workflows.</li>
+      <li>Designed buyer and seller experiences.</li>
+      <li>Explored retail, ecommerce and marketplace operations.</li>
+      <li>Turned business ideas into functional product concepts.</li>
+    </ul>
+  </div> -->
+    </section>
+
+    <section>
+        <h2>Ordering System.</h2>
+        <p style="font-size:1.3rem;max-width:44ch;margin:0 0 40px">A digital ordering system that makes ordering simpler
+            for customers and staff.</p>
+        <div class="cols">
+            <div class="item">
+                <h3>What I built</h3>
+                <ul>
+                    <li>Digital menu</li>
+                    <li>Product selection</li>
+                    <li>Cart and ordering flow</li>
+                    <li>Customer and table identification</li>
+                    <li>Order submission</li>
+                    <!-- <li>Restaurant-side order notification</li> -->
+                    <li>Responsive web interface</li>
+                </ul>
+            </div>
+            <div class="item">
+                <h3>How I built it</h3>
+                <p>I was comfortable with frontend development but did not yet have strong backend experience. Instead
+                    of stopping, I used EmailJS as a lightweight way to handle order submission and notification.</p>
+                <p>That let me build and test a working product while learning how frontend applications talk to
+                    external services.</p>
+            </div>
+        </div>
+        <p class="tech">HTML · CSS · JavaScript · EmailJS</p>
+    </section>
+
+    <section>
+        <h2>Education.</h2>
+        <div class="item">
+            <h3>Bachelor of Business Administration</h3>
+            <p class="meta">NMV     · 2023-2026</p>
+            <p>Business, marketing, entrepreneurship and operations.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>What I bring.</h2>
+        <div class="bring">
+            <div>
+                <h3>Business thinking.</h3>
+                <p>I understand the customer and the commercial side.</p>
+            </div>
+            <div>
+                <h3>Technical understanding.</h3>
+                <p>I can work with engineers because I have built software myself.</p>
+            </div>
+            <div>
+                <h3>Product thinking.</h3>
+                <p>I care about the problem, not just the feature.</p>
+            </div>
+            <div>
+                <h3>Curiosity.</h3>
+                <p>I enjoy understanding how products move from a business to a customer, and how technology can make
+                    that experience better.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="more">
+        <div>
+            <button id="more" aria-expanded="false" aria-controls="r">One more thing.</button>
+            <div class="reveal" id="r">
+                <p style="margin:0">Let's talk. <a href="mailto:your@email.com">anujsarode10@gmail.com</a></p>
+                <!-- <p class="note">Replace with your email, LinkedIn and GitHub links.</p> -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var n = document.getElementById('name'), t = 'Anuj ';
+        t.split('').forEach(function (c, i) { var e = document.createElement('span'); e.textContent = c === ' ' ? '\u00a0' : c; e.setAttribute('aria-hidden', 'true'); e.style.animationDelay = (i * 70) + 'ms'; n.appendChild(e) });
+        var io = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('on', e.isIntersecting) }) }, { threshold: .55 });
+        document.querySelectorAll('.slide').forEach(function (x) { io.observe(x) });
+        var b = document.getElementById('more'), r = document.getElementById('r');
+        b.addEventListener('click', function () { var o = r.classList.toggle('open'); b.setAttribute('aria-expanded', o) });
+    </script>
+</body>
+
+</html>
